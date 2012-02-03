@@ -1,0 +1,11 @@
+<% title "Page > Simple | Edit" %>
+<h1>Edit Set</h1>
+<%= render 'form' %>
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li><p><%= link_to  "Back to Page Show", admin_page_path(@parent) %></p></li>
+		<li><p><%= link_to  "Delete", polymorphic_path([:admin, @parent,@simple]), :confirm => 'Are you sure?', :method => :delete %></p></li>		
+	</ul>
+<% end %>

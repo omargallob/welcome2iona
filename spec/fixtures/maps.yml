@@ -1,0 +1,11 @@
+one:
+  title: MyString
+  category_id: 1
+  description: MyText
+  embed_code: MyText
+
+two:
+  title: MyString
+  category_id: 1
+  description: MyText
+  embed_code: MyText

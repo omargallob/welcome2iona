@@ -1,0 +1,13 @@
+  <tr class="<%= cycle("odd","even") %>">
+    <td class="title"> <%= " - " unless page.parent.blank? %> <%= page.name %></td>
+    <td><%= page.navlabel %></td>
+    <td><%= page.position %></td>
+    <td><%= page.parent.name  unless page.parent.blank? %></td>
+    <td><%= page.simples.count if page.simples.count > 0 %></td>
+    <td><%= page.subpages.count if page.parent.blank? %></td>
+    <td><%= link_to image_tag("system/buttons/show.png",:width => "15"), admin_page_path(page) %></td>
+    <td><%= link_to image_tag("system/buttons/edit.png",:width => "15"), edit_admin_page_path(page) %></td>
+    <td><%= link_to image_tag("system/buttons/delete.png",:width => "15"), admin_page_path(page), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+	
+	<%= render :partial => page.subpages if page.parent.blank? %>

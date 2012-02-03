@@ -1,0 +1,14 @@
+<div id="map_<%= map.id %>" class="map_holder">
+	<h2>
+		<% unless map.category.blank? %>
+			<%# link_to map.title,  mapper_show_subfiltered_path(map.category.parent.page.name,map.category.parent.title.gsub(/ /,"_"),map.category.title.gsub("/","+").gsub(/ /,"_"))  %>
+				 <% if controller.action_name == "index" %> 
+					| <small><%= map.category.parent.title %> | <%= map.category.title %></small>
+				<% end %>
+		<% end %>
+	
+	</h2>
+	<div id="divMap">
+	<%= map.embed_code.html_safe %>
+	</div>
+</div>

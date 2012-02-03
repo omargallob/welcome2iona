@@ -1,0 +1,5 @@
+<% @galleries.each do |g| %>	
+	<% g.pictures.each do |u| %>
+		<li><%= link_to(image_tag(u.image_url(:thumb).to_s, :title =>u.title, :alt =>u.description),u.image_url.to_s, :title => u.title) %></li>
+	<% end %>
+<% end %>

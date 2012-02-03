@@ -1,0 +1,6 @@
+<h2>Latest Updates</h2>
+<ul>
+<% Category.find_all_sub.delete_if{|ca| ca.maps.count == 0 or ca.posts.count == 0}.each do |c| %>
+	<li><%= link_to c.title+" (#{c.posts.count})",viewer_index_subfiltered_posts_path(c.parent.page.name,c.parent.title.gsub("/","+").gsub(" ","_"),c.title.gsub("/","+")) %></li>
+<% end %>
+</ul>

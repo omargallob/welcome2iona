@@ -1,0 +1,13 @@
+<%= simple_form_for( [:admin,@gallery],:html => {:multipart => true}) do |f| %>
+
+<%= f.input :title, :input_html => {:class =>"validate[required]"} %>
+<%= f.input :category_id, :collection => @categories, :input_html => {:class =>"validate[required]"} %>
+<% if controller.action_name == "edit" %>
+	<h1>Pictures</h1>
+	<% f.fields_for :pictures do |builder| %>
+	 <%= render "picture_fields", :f => builder %>
+	<% end %>
+<% end %>
+<!--<p class="add_row"><%= link_to_add_fields "Add picture", f, :pictures %></p>-->
+  <p><%= f.submit %></p>
+<% end %>

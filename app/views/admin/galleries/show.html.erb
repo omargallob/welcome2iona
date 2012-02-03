@@ -1,0 +1,46 @@
+<% title "Gallery | #{@gallery.category.title} | #{ @gallery.title }" %>
+<h1><strong><%= @gallery.title %></strong></h1>
+<h2>  <%= @gallery.category.title %></h2>
+<ol>
+	<li class="title"></li>
+<% @gallery.pictures.cropped.each do |c| %>
+	
+	<li> <%= image_tag c.image_url(:thumb).to_s %> <p><%= link_to "crop", admin_gallery_picture_crop_path(@gallery.id,c.id) %> | <%= link_to "delete", admin_gallery_picture_path(@gallery.id,c.id), :style=>"margin-left:10px;", :method =>"delete" %></p></li>
+<% end %>
+</ol>
+	<div id="add_a_set" style="display:none;">
+<h1><strong>Add image to gallery</strong></h1>
+<%= simple_form_for( [:admin,@gallery,@picture],:html => {:multipart => true}) do |f| %>
+	<%= f.input :title,:input_html=>{:class => "validate[required]"} %>
+	<%= f.input :description %>
+	<%= f.input :position,:collection => 1..20 %>
+	<%= f.input :gallery_id,:as => :hidden, :input_html =>{:value => @gallery.id } %>
+	<%= f.input :image, :as => :file,:input_html=>{:class => "validate[required]"} %>
+		
+		<p><%= f.submit "Save image" %><a href="/tooltip_crop.html?width=175" class="jTip" id="two" name="What happens next?">?</a></p>
+<% end %>
+	</div>
+	<p><%= link_to("Upload image", "#add_a_set",:class=> "add_set", :id =>"show_form")  %><%= link_to("Hide image form", "#center",:class=> "add_set", :style=>"display:none",:id =>"hide_form")  %> <a href="/tooltip_set.html?width=175" class="jTip" id="four" name="What are sets?">?</a>	</p>
+	
+<div id="hint_1" style="display:none;">
+	<a href="/tooltip_upload.html?width=175" class="jTip" id="three" name="Image dimensions:">?</a>
+</div>
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li><p>- <%= link_to "Edit", edit_admin_gallery_path(@gallery) %></p></li>
+		<li><p>- <%= link_to"Destroy", admin_gallery_path(@gallery), :confirm => 'Are you sure?', :method => :delete %></p></li>
+		<li><p>- <%= link_to "View All", admin_galleries_path %></p></li>
+	</ul>
+<% end %>
+<% content_for(:script) do %>
+<script>
+	$(function() {
+			$("form").validationEngine();
+			$("label[for=picture_image]").html('Image'+$("#hint_1").html());
+			$("#hint_1").remove();
+			JT_init();
+	});
+	</script>
+<% end %>

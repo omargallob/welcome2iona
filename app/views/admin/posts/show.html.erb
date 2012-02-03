@@ -1,0 +1,109 @@
+<% title "Post" %>
+<%= image_tag @post.image_url(:thumb).to_s if @post.image_url.present? %>
+<h1 class"header">Post Details</h1>
+<p><%# image_tag @post.image_url(:thumb).to_s %>
+	</p>
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+  <%= @post.body.html_safe %>
+
+<p>
+  <strong>Category:</strong>
+  <%= @post.category.title %>
+</p>
+<p>
+  <strong>Position:</strong>
+  <%= @post.position %>
+</p>
+<p>
+  <strong>Published On:</strong>
+  <%= @post.published_on.strftime("%d %b %Y") %>
+</p>
+
+<p>
+  <strong>Start at:</strong>
+  <%= @post.start_at.strftime("%d %b %Y") unless  @post.start_at.blank? %>
+</p>
+<p>
+  <strong>Ends At:</strong>
+  <%= @post.end_at.strftime("%d %b %Y") unless @post.start_at.blank? %>
+</p>
+
+<p>
+  <strong>Open:</strong>
+  <%= @post.open.html_safe %>
+</p>
+<p>
+  <strong>Rates:</strong>
+</p>
+<%= @post.rates.html_safe unless @post.rates.blank? %>
+<p>
+  <strong>Address:</strong>
+  <%= @post.address %>
+</p>
+<p>
+  <strong>Website:</strong>
+  <%= @post.website %>
+</p>
+<p>
+  <strong>Phone:</strong>
+  <%= @post.phone %>
+</p>
+<p>
+  <strong>email:</strong>
+  <%= @post.email %>
+</p>
+<% if @post.uploads.cropped.count > 0 %>
+
+	<h1 class"header">Images</h1>
+<ul style="float:left;width:100%;">
+	<% @post.uploads.each do |p| %>
+	<li style="float:left;margin-right:10px"><p><%= image_tag p.image_url(:thumb).to_s %> <%= link_to "crop", admin_post_album_upload_crop_path(@post.id,p.album.id,p.id) %><%= link_to "delete", admin_post_album_upload_path(@post.id, p.album.id,p.id), :style=>"margin-left:10px;", :method =>"delete" %></p></li>
+	<% end %>
+</ul>
+<% end %>
+	<div id="add_a_set" style="display:none;">
+<% if @post.uploads.count < 4 %>
+	<h1 class"header">Add Image</h1>
+	<%= simple_form_for([:admin,@post,@post.albums.first,Upload.new], :html=>{:multipart => true}) do |f| %>
+		<%= f.input :title, :label => "Image Title",:input_html=>{:class => "validate[required]"}  %>
+		<%= f.input :description,:input_html=>{:class => "validate[required]"}  %>
+		<%= f.input :image, :as => :file,:input_html=>{:class => "validate[required]"}  %>
+		<%= f.input :album_id, :as => :hidden,:input_html =>{:value =>@post.albums.first.id} %>
+		<%= f.input :_destroy, :as => :hidden %>
+		<p><%= f.submit "Upload image"  %><a href="/tooltip_upload.html?width=175" class="jTip" id="two" name="What happens next?">?</a></p>
+	<% end %>
+<% else %>
+	<h1>Delete images to add new ones</h1>
+<% end %>
+	</div>
+	<p><%= link_to("Add image", "#add_a_set",:class=> "add_set", :id =>"show_form")  %><%= link_to("Hide image form", "#center",:class=> "add_set", :style=>"display:none",:id =>"hide_form")  %> <a href="/tooltip_image.html?width=175" class="jTip" id="four" name="What am I doing here?">?</a>	</p>
+
+<div id="hint_1" style="display:none;">
+	<a href="/tooltip_upload.html?width=175" class="jTip" id="three" name="Image dimensions:">?</a>
+</div>
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li>
+		<p> <%= link_to "Edit", edit_admin_post_path(@post) %></p></li>
+		<li>
+		<p> <%= link_to "Destroy", admin_post_path(@post), :confirm => 'Are you sure?', :method => :delete %></p></li>
+		<li>
+		<p> <%= link_to "View All", admin_posts_path %></p></li>
+	</ul>
+<% end %>
+<% content_for(:script) do %>
+<script>
+	$(function() {
+			$("form").validationEngine();
+				$("label[for=upload_image]").html('Image'+$("#hint_1").html());
+				$("#hint_1").remove();
+				JT_init();
+	});
+	</script>
+<% end %>

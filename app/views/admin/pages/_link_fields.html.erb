@@ -1,0 +1,8 @@
+<div class="fields">
+
+	<%= f.input :title %>
+  <%= f.association :category, :collection => @subcategories %>
+
+	<%= f.input :page_id, :collection => Page.all.map{|x| [ x.navlabel,x.id]},:input_html=>{:class => "validate[required]"} unless @page.parent = nil %>
+	<%= link_to_remove_fields "remove", f %>
+</div>

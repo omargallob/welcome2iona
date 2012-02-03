@@ -1,0 +1,11 @@
+<% title "Edit Map" %>
+<h1>Edit map</h1>
+<%= render 'form' %>
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li><p><%= link_to "Show", admin_map_path(@map) %></p></li>
+			<li><p><%= link_to "View All", admin_maps_path %></p></li>
+	</ul>
+<% end %>

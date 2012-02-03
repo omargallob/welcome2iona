@@ -1,0 +1,48 @@
+
+<%  title render_navigation(:renderer => :text, :items => @main_items,:join_with => ' | ') %>
+
+<h1 class="title">
+	<%= @category.title %> <%= "(#{@category.posts.published.count})" if @category.posts.published.count > 0 %>
+	<%= link_to("View on map",  mapper_show_subfiltered_path(@category.parent.page.name,@category.parent.title.gsub(/ /,"_"),@category.title.gsub("/","+").gsub(/ /,"_")),:class=>"maps",:target => "_blank", :title => "map") unless @category.parent.blank?  %>
+
+	<span class="actions posts">	<%= render :partial => "shared/sharedthis" %>  </span>
+</h1>
+	<%= @category.body.html_safe if params[:subcat].blank? and @category.body.present?  %>
+<ul class="filter">
+
+
+	<%= render_navigation :level =>3, :items =>@main_items  %>
+</ul>
+
+	<ul id="posts">
+		<%= render :partial => "shared/post", :collection => @posts %>
+	</ul>
+
+
+
+<div id="paginator">
+<%= paginate @posts %>
+
+</div>
+<% content_for(:options) do %>
+	<%= render :partial => "shared/home" if @page.name == "home" %>
+	<%= content_tag(:h1, @page.title,:class=>"light" )  %>
+	<%= render_navigation :level =>2, :items =>@main_items  %>
+<% end %>
+
+
+
+<% content_for(:script) do %>
+<script>
+$("#right-column").remove();
+$("section#center").addClass("wide");
+
+$("ul#posts").css("width","100%");
+$("#left-column ul:first").addClass("sf-vertical");
+
+$(".lightbox").colorbox({transition:"fade"});
+if ($("ul.filter li").length <= 1){
+	$("ul.filter").remove();
+}
+</script>
+<% end %>	

@@ -1,0 +1,105 @@
+<% title "Map" %>
+<h1>  <%= @map.title %></h1>
+
+<p>
+  <strong>Category:</strong>
+  <%= @map.category.title if @map.category %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @map.description.html_safe %>
+</p>
+
+	<div id="divMap">
+  	<%= @map.embed_code.html_safe %>
+	</div>
+
+  <%= @map.georss.url %>
+
+
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li><p> <%= link_to "Edit", edit_admin_map_path(@map) %></p></li>
+		<li><p> <%= link_to "Destroy", admin_map_path(@map), :confirm => 'Are you sure?', :method => :delete %></p></li>
+		<li><p>  <%= link_to "View All", admin_maps_path %></p></li>
+	</ul>
+<% end %>
+
+<% content_for(:head) do %>
+<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+
+<script type="text/javascript">
+    var map = null;
+    var MM = Microsoft.Maps;
+    var infobox = null;
+    var collectionInfoBox = null;
+
+    function GetMap() {
+        var options = { credentials: "ApW6Q8PbsdMKN_3b2TlkmAzB2cpfAlS4GPjO-OV0zU3L4mM2tk_cI_wTJK-tDdXP",
+            enableClickableLogo: false,
+            enableSearchLogo: false,
+            mapTypeId: Microsoft.Maps.MapTypeId.road,
+            center: new MM.Location(54.87350326912944, 15.333815098500053),
+            zoom: 4
+        };
+        map = new MM.Map(document.getElementById('divMap'), options);
+
+        // Hide the info box when the map is moved.
+        MM.Events.addHandler(map, 'viewchange', hideInfobox);
+				LoadModule();
+    }
+
+    function LoadModule() {
+        // Register and load a new module
+        MM.registerModule("SimpleGeoRSSModule", "/javascripts/SimpleGeoRSSModule.js");
+        MM.loadModule("SimpleGeoRSSModule", { callback: ModuleLoaded });
+    }
+
+    function ModuleLoaded() {
+        // Use the function provided by the newly loaded module
+        var myModule = new GeoRSSModule(map);
+        myModule.ImportGeoRSS(document.getElementById("txtGeoRSS").value);
+        collectionInfoBox = new MM.EntityCollection;
+        map.entities.push(collectionInfoBox);
+    }
+
+    //Display InfoBox
+    function showInfoBox(e) {
+        if (e.targetType == "pushpin") {
+            collectionInfoBox.clear();
+            infobox = new MM.Infobox(e.target.getLocation(), { title: e.target.title, description: e.target.description, offset: new MM.Point(0, 30), visible: true });
+            collectionInfoBox.push(infobox);
+        }
+        else if (e.targetType == "polygon" || e.targetType == "polyline") {
+            collectionInfoBox.clear();
+            infobox = new MM.Infobox(new MM.Location(e.target.anchorLat, e.target.anchorLon), { title: e.target.title, description: e.target.description, offset: new MM.Point(0, 0), visible: true });
+            collectionInfoBox.push(infobox);
+        }
+    }
+
+    function hideInfobox(e) {
+        try {
+            infobox.setOptions({ visible: false });
+        }
+        catch (err) {
+        }
+    }
+		
+		
+</script>
+<% end %>
+<% content_for(:script) do %>
+<script>
+	$(function(){
+		GetMap();
+	})
+		
+</script>
+<% end %>
+<div id='divCtrl'>
+      <a style="margin-left:10px">GeoRSS-Feed</a>
+      <input id="txtGeoRSS" type="text" style="margin-top:4px; margin-left:5px" value="<%= @map.georss.url %>" />
+      <input id="Button1" type="button" value="Import" onclick="LoadModule()" />
+  </div>

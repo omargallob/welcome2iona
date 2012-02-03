@@ -1,0 +1,8 @@
+<%= simple_form_for([:admin,@map],:html => {:multipart => true}) do |f| %>
+ <%= f.input :title,:input_html=>{:class => "validate[required]"} %>
+ <%= f.input :description,:input_html=>{:class => "mceEditor"} %>
+ <%= f.association :category, :collection => @subcategories,:input_html=>{:class => "validate[required]"} %>
+ <%= f.input :embed_code %>
+<%= f.input :georss,:as => :file, :input_html=>{:class => "validate[required]"} %>
+  <p><%= f.submit %></p>
+<% end %>

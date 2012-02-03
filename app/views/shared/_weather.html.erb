@@ -1,0 +1,9 @@
+
+<div id="weather_box">
+    <div class="img_holder">
+    <%= image_tag @image unless @image == "http://www.google.com" %>
+    </div>
+    <h4><%= @temp %>ºC</h4>
+    <p><%= @wind %></p>
+    <%# @weather %>
+</div>

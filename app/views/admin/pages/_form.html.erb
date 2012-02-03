@@ -1,0 +1,37 @@
+<%= simple_form_for([:admin,@page],:html => {:multipart => true}) do |f| %>
+ <%= f.input :name,:label =>"slug", :input_html=>{:class => "validate[required]"} %>
+ <%= f.input :title,:input_html=>{:class => "validate[required]"} %>
+ <%= f.input :navlabel,:input_html=>{:class => "validate[required]"} %>
+ <%= f.input :position, :collection => 1..20  %>
+ <%= f.association :parent, :collection => Page.main.all %>
+ <%= f.input :cropped, :label =>"Confirmed?" %>
+<div class="container_editor"> 
+<%= f.input :body,:input_html=>{:class => "mceEditor validate[required]"} %>
+</div>
+ <%# f.input :image, :as => :file %>
+ <%= f.input :image_title, :as => :string, :label => "Top Image Title" %>
+ <%= f.input :home, :as => :file, :label => "Top Image" %>
+<% if controller.action_name == "edit" and @page.simples.count > 0 %>
+	<!-- <h1>Sets</h1>
+	<%= f.fields_for :simples do |builder| %>
+	 <%= render "simple_fields", :f => builder %>
+	<% end %>
+<p class="add_row"><%= link_to_add_fields "Add set", f, :simples %></p>-->
+<% end %>
+<% if controller.action_name == "edit" %>
+<h1>Link</h1>
+	<%= f.fields_for :link do |builder| %>
+	 <%= render "link_fields", :f => builder %>
+	<% end %>
+<% end %>
+
+ <h1>Metatag</h1>
+	<%= f.fields_for :metatag do |builder| %>
+	 <%= render "shared/metatag_fields", :f => builder %>
+	<% end %>
+<p><%= f.submit %><a href="/tooltip_crop.html?width=175" class="jTip" id="two" name="What happens next?">?</a></p>		 
+<% end %>
+
+<div id="hint_1" style="display:none;">
+	<a href="/tooltip_home.html?width=175" class="jTip" id="three" name="Image dimensions:">?</a>
+</div>

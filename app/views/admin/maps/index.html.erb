@@ -1,0 +1,22 @@
+<% title "Maps" %>
+<h1 class="title">Maps</h1>
+<table id="list">
+	<thead>
+	  <tr>
+	    <th>Title</th>
+	    <th>Category</th>
+		<th></th>		<th></th>		<th></th>
+	  </tr>
+	</thead>
+	<tbody>
+	<%= render :partial => @maps %>
+	</tbody>
+</table>
+
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li><p><%= link_to "New Map", new_admin_map_path %></p></li>
+	</ul>
+<% end %>

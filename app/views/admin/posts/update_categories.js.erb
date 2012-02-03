@@ -1,0 +1,22 @@
+<% if @category.title == "What's On" ||   @category.title == "News" %>
+	<% if  @category.title == "What's On" %>
+		$("#post_start_at_1i").parent().fadeIn("slow");		
+		$("#post_end_at_1i").parent().fadeIn("slow");
+		
+		$("#post_published_on_1i").parent().fadeOut("slow");
+	<% elsif  @category.title == "News" %>
+		$("#post_published_on_1i").parent().fadeIn("slow");	
+		$("#post_start_at_1i").parent().fadeOut("slow");		
+		$("#post_end_at_1i").parent().fadeOut("slow");
+		
+		$(".extra_info").fadeOut("slow");
+	<% else %>
+		$(".extra_info").fadeIn("slow");
+	<% end %>
+<% else %>
+	$("#post_published_on_1i").parent().fadeOut("slow");
+	$("#post_start_at_1i").parent().fadeOut("slow");		
+	$("#post_end_at_1i").parent().fadeOut("slow");
+	
+			$(".extra_info").fadeIn("slow");
+<% end %>

@@ -1,0 +1,5 @@
+
+<%= f.input :title,:as =>:hidden, :input_html => {:value => "First"}, :label => "Album Title" %>
+<%= f.simple_fields_for :uploads do |builder| %>
+ <%= render "upload_fields", :f => builder %>
+<% end %>	

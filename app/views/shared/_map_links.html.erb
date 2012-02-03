@@ -1,0 +1,13 @@
+<%= content_tag(:h1, "Maps", :class=>"light	") %>
+<ul>
+	<%# link_to "All in #{@parent.navlabel}", mapper_path(@parent.name) %>
+	<% @parent.categories.each do |c| %>
+	<% c.subcategories.delete_if{|s|s.maps.count == 0}.each do |s|%>
+		<% if controller.controller_name == "maps" %>
+		<li class="<%= params[:subcat] == s.title ? 'selected' : '' %>"><%= link_to s.title,mapper_show_path(@parent.name, s.title.gsub("/","+")) %></li>
+		<% else %>
+		<li><%= link_to s.title,mapper_show_path(@parent.name, s.title.gsub("/","+")) %></li>
+		<% end %>
+	<% end %>
+	<% end %>
+</ul>

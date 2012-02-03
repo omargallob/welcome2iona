@@ -1,0 +1,8 @@
+<div class="header" id="latest_news">
+	<h2>Latest News</h2>
+</div>
+<ul class="holder">
+
+		<%= render :partial => "shared/home/center_link", :collection => @latest_news.sort_by(&:published_on).reverse.take(2) %>
+
+</ul>

@@ -1,0 +1,39 @@
+embed_assets: on
+
+javascripts:
+  common:
+    - public/javascripts/plugins.js      
+    - public/javascripts/rails.js  
+    - public/javascripts/application.js
+    - public/javascripts/jquery.formalize.js
+    - public/javascripts/jquery.ad-gallery.js
+    - public/javascripts/jquery.validationEngine.js
+    - public/javascripts/hoverIntent.js
+    - public/javascripts/jquery.colorbox.js
+    - public/javascripts/languages/jquery.validationEngine-en.js
+    - public/javascripts/jtip.js
+  admin:
+    - public/javascripts/jquery.color.js
+    - public/javascripts/jquery.Jcrop.js
+    - public/javascripts/admin.js    
+    - public/javascripts/jquery.dataTables.js 
+    
+
+
+stylesheets:
+  common:
+    - public/stylesheets/screen.css
+    - public/stylesheets/formalize/formalize.css
+    - public/stylesheets/simple_form.css
+    - public/stylesheets/table.css
+    - public/stylesheets/svwp_style.css
+    - public/stylesheets/ad-gallery/jquery.ad-gallery.css
+    - public/stylesheets/colorbox/colorbox.css
+    - public/stylesheets/jtip.css
+    - public/stylesheets/smoothness/jquery-ui-1.8.11.custom.css
+    - public/stylesheets/validationEngine.jquery.css
+    - public/fonts/stylesheet.css
+  admin:
+    - public/stylesheets/fluid_grid.css    
+    - public/stylesheets/jcrop/jquery.Jcrop.css
+    - public/stylesheets/datatables/css/demo_table.css

@@ -1,0 +1,29 @@
+<% title "Page | Edit" %>
+<h1>Edit Page</h1>
+<%= render 'form' %>
+
+
+
+<% content_for(:ads) do %>
+	<%= render :partial => "shared/social_buttons" %>
+	<%= render :partial => "shared/quick_gallery" %>
+<% end %>
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li><p><%= link_to  "Show", admin_page_path(@page) %></p></li>
+		<li><p><%= link_to  "View All", admin_pages_path %></p></li>		
+	</ul>
+<% end %>
+
+<% content_for(:script) do %>
+<script>
+	$(function() {
+			$("form").validationEngine();
+			$("label[for=page_home]").html('Top Image'+$("#hint_1").html());
+			$("#hint_1").remove();
+			JT_init();
+			//alert();
+	});
+	</script>
+<% end %>

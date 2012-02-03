@@ -1,0 +1,9 @@
+<div class="fields">
+
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :position,:collection => 1..20 %>
+<%# f.input :image, :as => :file %>
+<%= f.input :_destroy, :as => :hidden %>
+<%= link_to_remove_fields "remove", f %>
+</div>

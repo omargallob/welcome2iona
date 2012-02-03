@@ -1,0 +1,24 @@
+<% title "Admin Users" %>
+<h1 class="title">Admin Users</h1>
+<table id="list">
+	<thead>
+	  <tr>
+	    <th>email</th>
+	    <th>last login</th>
+			
+	    <th>last login IP</th>
+		<th></th>	
+	  </tr>
+	</thead>
+	<tbody>
+	<%= render :partial => "user", :collection => @users %>
+	</tbody>
+</table>
+
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li><p><%= link_to "Invite user", new_admin_invitation_path %></p></li>
+	</ul>
+<% end %>

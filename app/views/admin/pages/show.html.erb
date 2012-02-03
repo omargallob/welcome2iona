@@ -1,0 +1,98 @@
+<% title "Page | #{@page.navlabel}" %>
+
+<h1 class="title"> <%= @page.title.html_safe %></h1>
+  <%= @page.body.html_safe %>
+	
+	<p><%= link_to @page.link.title, viewer_index_subfiltered_posts_path(@page.link.category.parent.page.name.gsub("'","$"), @page.link.category.parent.navlabel.gsub(" ","_").gsub("'","$"),@page.link.category.title.gsub("/","+")) unless @page.link.blank? %></p>
+
+	<%= render :partial => "simple", :collection  => @page.simples.delete_if{|s|s.title.blank?}  %>	
+	
+	<div id="add_a_set" style="display:none;">
+	<h1>Add a Topic</h1>
+	<%= simple_form_for([:admin,@page,@simple],:html => {:multipart => true}) do |f| %>
+		<%= f.input :title,:input_html=>{:class => "validate[required]"} %>
+		<%= f.input :body,:input_html=>{:class => "mceEditor validate[required]"} %>
+		<%= f.input :position, :collection => 1..20 %>
+		<%= f.input :image, :as => :file %>
+		<%= f.input :simpleable_id, :as => :hidden %>
+		<%= f.input :simpleable_type, :as => :hidden %>
+		<%= f.input :page_id, :collection => @page.subpages.map{|x| [ x.navlabel,x.id]} unless @page.parent = nil %>
+
+	<p><%= f.submit "Upload Set" %><a href="/tooltip_crop.html?width=175" class="jTip" id="two" name="What happens next?">?</a></p>		 
+	<% end %>
+	</div>
+	<p style="margin:15px 0;"><%= link_to("Add a topic", "#add_a_set",:class=> "add_set", :id =>"show_form")  %><%= link_to("Hide form", "#center",:class=> "add_set", :style=>"display:none",:id =>"hide_form")  %> <a href="/tooltip_set.html?width=175" class="jTip" id="four" name="What are sets?">?</a>	</p>
+	<h1 class="title">Related Info</h1>
+	<p>
+	  <strong>Name:</strong>
+	  <%= @page.name %>
+	</p>
+	<p>
+	  <strong>Title:</strong>
+	  <%= @page.title %>
+	</p>
+	<p>
+	  <strong>Navlabel:</strong>
+	  <%= @page.navlabel %>
+	</p>
+	<p>
+	  <strong>Position:</strong>
+	  <%= @page.position %>
+	</p>
+	<p>
+	  <strong>Parent:</strong>
+	  <%= @page.parent_id %>
+	</p>
+	
+<% if @page.parent.blank? %>
+	<% unless @page.metatag.blank? %>
+	<h1 class="title">Meta tag</h1>
+	<p><strong>Title:</strong>
+	 <%= @page.metatag.title %>
+	</p>
+	<p><strong>Description:</strong>
+	 <%= @page.metatag.description %>
+	</p>
+	<p><strong>Keywords:</strong>
+	 <%= @page.metatag.keywords %>
+	</p>
+	<% end %>
+
+
+<h1 class="title">SubPages</h1>
+<table id="list">
+  <tr>
+    <th class="title">Name</th>
+    <th>Navlabel</th>
+    <th>Position</th>
+    <th>Parent</th>
+  	<th></th>	<th></th>	<th></th>
+  </tr>
+	<%= render :partial => @page.subpages %>
+</table>
+<% end %>
+
+<div id="hint_1" style="display:none;">
+	<a href="/tooltip_simple.html?width=175" class="jTip" id="three" name="Image dimensions:">?</a>
+</div>
+
+<% content_for(:options) do %>
+	<% if @page.parent.blank? %>
+	<% end 	%>
+	<h1>Options</h1>
+	<ul>
+		<li><p><%= link_to  "Edit", edit_admin_page_path(@page) %></p></li>
+		<li><p><%= link_to "Destroy", admin_page_path(@page), :confirm => 'Are you sure?', :method => :delete  %></p></li>
+		<li><p><%= link_to  "View All", admin_pages_path %></p></li>		
+	</ul>
+<% end %>
+<% content_for(:script) do %>
+<script>
+	$(function() {
+			$("form").validationEngine();
+			$("label[for=simple_image]").html('Image'+$("#hint_1").html());
+			$("#hint_1").remove();
+			JT_init();
+	});
+	</script>
+<% end %>

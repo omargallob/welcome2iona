@@ -1,0 +1,20 @@
+<% title "Category | Edit" %>
+<h1>Edit Category</h1>
+<%= render 'form' %>
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li><p>  <%= link_to "Show",admin_category_path(@category) %></p></li>
+		<li><p>  <%= link_to "View All", admin_categories_path %></p></li>
+	</ul>
+<% end %>
+<% content_for(:script) do %>
+<script>
+$(function() {
+
+ 	$("form.category").validationEngine();
+});
+
+</script>
+<% end %>

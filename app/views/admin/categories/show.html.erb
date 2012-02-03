@@ -1,0 +1,31 @@
+<% title "Category" %>
+<h1>  <%= @category.title %></h1>
+<% unless @category.parent_id.blank? %>
+<p>
+  <strong>Parent:</strong>
+  <%= @category.parent_id %>
+</p>
+<% end %>
+<% unless @category.position.blank? %>
+<p>
+  <strong>Position:</strong>
+  <%= @category.position %>
+</p>
+<% end %>
+<table id="list">
+  <tr>
+    <th>Title</th>
+    <th>Category</th>
+		<th></th>		<th></th>	<th></th>		<th></th>		<th></th>
+  </tr>
+	<%= render :partial => @category.subcategories	 %>
+</table> 
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li><p>  <%= link_to "Edit", edit_admin_category_path(@category) %> </p></li>
+		<li><p>  <%= link_to "Destroy",admin_category_path(@category), :confirm => 'Are you sure?', :method => :delete %> </p></li>
+		<li><p>  <%= link_to "View All", admin_categories_path %></p></li>
+	</ul>
+<% end %>

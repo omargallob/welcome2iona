@@ -1,0 +1,42 @@
+<%  title render_navigation(:renderer => :text, :items => @main_items,:join_with => ' | ') %>
+<h1 class="title"><%= @page.title.html_safe %><span class="actions">	<%= render :partial => "shared/sharedthis" %></span> </h1>
+<%= @page.body.html_safe %>
+
+<%= render :partial => "simple", :collection => @page.simples.cropped.order("position")  %>
+<% if @page.name == "home" %>
+
+	<div class="double_columns">
+		<div class="holder_div left_one">
+		<%= render :partial => "shared/home/upcoming_events" %>
+		</div>
+		<div class="holder_div">
+		<%= render :partial => "shared/home/latest_news" %>
+		</div>
+	</div>
+<% end %>
+
+
+<% content_for(:options) do %>
+	<%= render :partial => "shared/home" if @page.name == "home" %>
+	<%= content_tag(:h1, @category.title ) unless params[:parent].blank? %>
+	<%= content_tag(:h1, @page.title) if params[:parent].blank? and @page.name != "home" %>
+
+	<%# render_navigation :level => 3, :items => @main_items unless params[:parent].blank? %>
+	<%= render_navigation :level => 2, :items => @main_items %>
+
+	<%# render :partial => "shared/map_links" if @page.name == "iona-today" || @page.name =="activities" %>
+<% end %>
+
+<% content_for(:ads) do %>
+	<%= render :partial => "shared/social_buttons" %>
+	<%= render :partial => "shared/quick_gallery" %>
+
+<% end %>
+<% content_for(:script) do %>
+<script>
+$(document).ready(function(){
+
+
+});
+</script>
+<% end %>

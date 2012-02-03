@@ -1,0 +1,17 @@
+
+<%= simple_form_for([:admin,@category]) do |f| %>
+<%= f.input :title,:input_html => {:class=>"validate[required]"} %>
+<%= f.input :navlabel,:input_html => {:class=>"validate[required]"} %>
+	<%= f.input :parent_id,:collection => Category.find_main %>
+	<%= f.input :position,:input_html => {:class=>"validate[required]"}, :collection => 1..20 %>
+
+	<%= f.input :page_id,:collection => Page.main %>
+	<%= f.input :body,:input_html=>{:class => "mceEditor"} %>
+<div id="metatag_holder" style="display:none">
+	<h1>Metatag</h1>
+		<%= f.fields_for :metatag do |builder| %>
+		 <%= render "shared/metatag_fields", :f => builder %>
+		<% end %>
+</div>
+  <p><%= f.submit %></p>
+<% end %>

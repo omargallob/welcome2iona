@@ -1,0 +1,13 @@
+<% title "New Map" %>
+<h1>New map</h1>
+<%= render 'form' %>
+
+
+
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li><p><%= link_to "Back to List", admin_maps_path %></p></li>
+	</ul>
+<% end %>

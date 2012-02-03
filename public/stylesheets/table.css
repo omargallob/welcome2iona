@@ -1,0 +1,42 @@
+/* line 1, ../src/table.scss */
+table#list {
+  border: 1px solid #3C4D6F;
+  padding: 4px;
+	border-radius: 4px;
+	width:100%;
+	margin-top:10px;
+	float:left;
+}
+
+table#list thead{
+	border-bottom:1px solid #3C4D6F;
+}
+table#list thead tr th{ text-align:center;}
+/* line 6, ../src/table.scss */
+table#list tr.odd {
+  background: 	white;
+}
+table#list tr.even {
+  background:#EFEFEF;
+}
+/* line 11, ../src/table.scss */
+table#list tr th {
+/*background:url(/images/system/bg/header.png) repeat-x 0 -127px;*/
+  color: #3C4D6F;
+  font-weight: bold;
+	padding: 10px 15px;
+	letter-spacing:1px;
+  text-align: left;
+}
+/* line 19, ../src/table.scss */
+table#list tr td {
+  padding: 5px 10px;
+  text-align: center;
+}
+/* line 25, ../src/table.scss */
+table#list tr td.title, table#list tr th.title {
+  text-align: left;
+}
+table#list tr td a img {
+	margin-bottom:0px;
+}

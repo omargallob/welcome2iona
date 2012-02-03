@@ -1,0 +1,38 @@
+<% title "Post | Edit" %>
+<h1>Edit Post</h1>
+<%= render 'form' %>
+
+
+
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li>
+		<p> <%= link_to "Show", admin_post_path(@post) %></p></li>
+		<li>
+		<p> <%= link_to "View All", admin_posts_path %></p></li>
+	</ul>
+<% end %>
+
+<% content_for(:script) do %>
+<script>
+	$(function() {
+			$("form").validationEngine();
+			$("#post_category_id").change(function() {
+				$.ajax({ type: 'POST', url: '<%= admin_update_categories_path %>', data: 'id='+this.value });
+			});
+
+			<% unless @post.category.parent.title =="Events" %>
+				$("#post_published_on_1i").parent().fadeOut("slow");
+				$("#post_start_at_1i").parent().fadeIn("slow");		
+				$("#post_end_at_1i").parent().fadeIn("slow");
+			<% else %>
+			
+				$("#post_published_on_1i").parent().fadeIn("slow");
+				$("#post_start_at_1i").parent().fadeOut("slow");		
+				$("#post_end_at_1i").parent().fadeOut("slow");
+			<% end %>
+	});
+	</script>
+<% end %>

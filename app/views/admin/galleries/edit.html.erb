@@ -1,0 +1,21 @@
+<% title "Gallery | Edit" %>
+<h1>Edit Gallery</h1>
+
+
+<div class="grid_8">
+<%= render 'form' %>
+</div>
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li><p>-  <%= link_to "Show", admin_gallery_path(@gallery) %></p></li>
+		<li><p>-  <%= link_to "View All Albums", admin_galleries_path %></p></li>
+	</ul>
+<% end %>
+<% content_for(:script) do %>
+<script>
+	$(function() {
+			$("form").validationEngine();
+	});
+	</script>
+<% end %>

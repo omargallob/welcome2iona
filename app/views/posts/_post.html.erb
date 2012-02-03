@@ -1,0 +1,57 @@
+<li>
+	<div class="image_holder blocks">
+		<%= link_to image_tag(post.uploads.first.image_url(:square).to_s, :class=>"large"),post.uploads.first.image_url.to_s, :class=>"lightbox",:rel => "#{post.id}"  unless post.uploads.count == 0 %>
+		<%= image_tag("empty.png", :class=>"large")  if post.uploads.count == 0 %>
+		<% if post.uploads.count > 2 %>
+
+
+			<% for  upload in (post.uploads.delete_if{|u| u.id == post.uploads.first.id})  %>
+				<%= link_to image_tag(upload.image_url(:thumb).to_s, :class=>"small #{cycle('left','center','right')}"),upload.image_url.to_s, :class=>"lightbox",:rel => "#{post.id}"   %>
+			<% end %>
+		<% end %>
+	</div>
+	<div class="main_content blocks">
+		<h3><%= link_to post.category.title, viewer_index_subfiltered_posts_path(post.category.parent.page.name, post.category.parent.title.gsub(" ","_"), post.category.title.gsub("/","+")) %></h3>
+		<h2><%= post.title %></h2>
+		<%= post.body.html_safe %>
+		<p class="gotolink"><%= link_to "Go to website", "#{post.website}"%></p>
+	</div>
+	<% unless post.category.parent.title == "News" %>
+	<div class="extra_info blocks">
+			<h3>Info</h3>
+			<table>
+				<% unless post.open.blank? %>
+				<tr>
+					<td class="title"><p>Open:</p></td><td><%= post.open.html_safe %></td>
+				</tr>
+				<% end %>
+				<% unless post.rates.blank? %>
+				<tr>
+					<td class="title"><p>Rates:</p></td><td><%= post.rates.html_safe %></td>
+				</tr>
+				<% end %>
+						
+				<% unless post.address.blank? %>
+				<tr>
+					<td class="title"><p>Address:</p></td><td><p><%= post.address %></p></td>
+				</tr>
+				<% end %>
+				<% unless post.website.blank? %>
+				<tr>
+					<td class="title"><p>Website:</p></td><td><p><%= post.website %></p></td>
+				</tr>
+				<% end %>
+				<% unless post.phone.blank? %>
+				<tr>
+					<td class="title"><p>Phone:</p></td><td><p><%= post.phone %></p></td>
+				</tr>
+				<% end %>
+				<% unless post.email.blank? %>
+				<tr>
+					<td class="title"><p>Email:</p></td><td><p><%= post.email %></p></td>
+				</tr>
+				<% end %>
+			</table>
+	</div>
+	<% end %>
+</li>

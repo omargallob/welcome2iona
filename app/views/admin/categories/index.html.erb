@@ -1,0 +1,37 @@
+<% title "Categories" %>
+<h1 class="title" style="margin:10px 0;">Categories</h1>
+<table id="list">
+	<thead style="border-bottom:1px solid #3C4D6F;">
+		<tr>
+	    <th style="text-align:left;">Title</th>
+			<th>Navlabel</th>
+	    <th>Page</th>
+	    <th>Parent</th>
+	    <th>Position</th>
+	    <th>Posts</th>
+	 		<th></th>
+	 		<th></th>
+	 		<th></th>
+	  </tr>
+	</thead>
+  <tbody>
+	<%= render :partial => @categories %>
+	</tbody>
+</table>
+
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li><p><%= link_to "New Category", new_admin_category_path %></p></li>
+		<li><p><%= link_to "Back", :back %></p></li>
+	</ul>
+<% end %>
+
+<% content_for(:script) do %>
+<script>
+$(document).ready(function() {
+ 	//$('#list').dataTable();
+});
+</script>
+<% end %>

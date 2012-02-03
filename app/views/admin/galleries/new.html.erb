@@ -1,0 +1,20 @@
+<% title "Gallery | New" %>
+<h1>New Gallery</h1>
+
+<%= render 'form' %>
+
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li>
+		<p><%= link_to "Back to List", admin_galleries_path %></p></li>
+	</ul>
+<% end %>
+<% content_for(:script) do %>
+<script>
+	$(function() {
+			$("form").validationEngine();
+	});
+	</script>
+<% end %>

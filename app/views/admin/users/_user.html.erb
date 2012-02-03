@@ -1,0 +1,9 @@
+<tr class="<%= cycle("odd","even") %>">
+  <td><%= user.email %></td>
+  <td><%= user.last_sign_in_at %></td>
+	
+  <td><%= user.last_sign_in_ip %></td>
+ <!-- <td><%# link_to image_tag("system/buttons/show.png",:width => "15"), admin_user_path(user) %></td>
+  <td><%# link_to image_tag("system/buttons/edit.png",:width => "15"), edit_admin_user_path(user) %></td> -->
+  <td><%= link_to image_tag("system/buttons/delete.png",:width => "15"), admin_user_path(user), :confirm => 'Are you sure?', :method => :delete %></td>
+</tr>

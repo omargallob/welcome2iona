@@ -1,0 +1,32 @@
+<% title "Category | New" %>
+<h1>New Category</h1>
+<%= render 'form' %>
+
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li>
+		<p><%= link_to "Back to List", admin_categories_path %></p></li>
+	</ul>
+<% end %>
+
+<% content_for(:script) do %>
+<script>
+$(function() {
+
+ //	$("form.category").validationEngine();
+	$("#category_parent_id").change(function() {
+		if($(this).val()==""){
+			$("#metatag_holder").fadeOut(300);
+			$("#category_page_id").parent().fadeIn(300);
+		}else{
+			$("#metatag_holder").fadeIn(300);
+			$("#category_page_id").parent().fadeOut(300);
+		}
+	});
+				$("form").validationEngine();
+});
+
+</script>
+<% end %>

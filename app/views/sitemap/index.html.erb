@@ -1,0 +1,29 @@
+<%  title "Sitemap" %>
+<h1 class="title"><%= @page.title.html_safe %><span class="actions">	<%= render :partial => "shared/sharedthis" %></span> </h1>
+<%= @page.body.html_safe %>
+<div id="sitelinks">
+	<%= render_navigation  :items => @main_items, :expand_all => true %>
+</div>
+
+<% content_for(:ads) do %>
+	<h1>Follow us:</h1>
+	<ul id="social">
+		<li><%= link_to image_tag("system/social/facebook_32.png"), "#" %></li>
+		<li><%=  link_to image_tag("system/social/twitter_32.png"), "#" %></li>	
+		<li><%=  link_to  image_tag("system/social/flickr_32.png"), "#" %></li>
+	</ul>
+	<h1>Quick Gallery:</h1>
+	<ul id="q_gallery">
+		<% Picture.limit(4).shuffle.each do |u| %>
+		<li><%= image_tag u.image_url(:large_thumb) %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<% content_for(:script) do %>
+<script>
+$(document).ready(function(){
+	$("section#center").css("width","775px");
+});
+</script>
+<% end %>

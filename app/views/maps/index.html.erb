@@ -1,0 +1,117 @@
+<h1 class="title">Maps <span class="actions posts">	<%= render :partial => "shared/sharedthis" %></span></h1>
+<% title "Maps" %>
+
+<div id="tabs">
+
+	<%= render :partial => @map %>
+</div>
+<% content_for(:options) do %>
+	<div class="large_link">
+		<div id="photo_link" class="icon"></div>
+			<h3><%= link_to "<span>Photos</span>".html_safe, galleries_path %></h3>
+	</div>
+	<%= content_tag(:h1, "Quick Links", :class=>"light") %>
+	<%= render_navigation :level => 2, :items => @main_items %>	
+	<ul class="filters">
+	<% @maps.delete_if{|z| z.category.blank?}.each do |map| %>
+	<li><%= link_to map.category.title,mapper_show_subfiltered_path(map.category.parent.page.name,map.category.parent.title.gsub(/ /,"_"),map.category.title.gsub("/","+").gsub(/ /,"_")), :target =>"_blank" %></li>
+	<% end %>
+	</ul>
+<% end %>
+
+<% content_for(:script) do %>
+<script>
+$(function(){
+	$("section#center").addClass("wide");
+	$("section#center").css("width","760px");
+	$("section#center").css("margin","0px");
+
+	$("header#top").addClass("nohome");
+	$("h1.title").css("margin-bottom","15px");
+	//	$("div#basic").slideViewerPro();
+	$('.ad-gallery').adGallery();
+		$( "#tabs" ).tabs();
+
+//	$("#left-column").append("<ul>"+$("ul.filter").html()+"</ul>"):
+
+	
+});
+
+</script>
+<script>
+	$(function(){
+		GetMap();
+	})
+		
+</script>
+<% end %>
+
+<% content_for(:head) do %>
+<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+
+<script type="text/javascript">
+    var map = null;
+    var MM = Microsoft.Maps;
+    var infobox = null;
+    var collectionInfoBox = null;
+
+    function GetMap() {
+        var options = { credentials: "ApW6Q8PbsdMKN_3b2TlkmAzB2cpfAlS4GPjO-OV0zU3L4mM2tk_cI_wTJK-tDdXP",
+            enableClickableLogo: false,
+            enableSearchLogo: false,
+            mapTypeId: Microsoft.Maps.MapTypeId.road,
+            center: new MM.Location(54.87350326912944, 15.333815098500053),
+            zoom: 4
+        };
+        map = new MM.Map(document.getElementById('divMap'), options);
+
+        // Hide the info box when the map is moved.
+        MM.Events.addHandler(map, 'viewchange', hideInfobox);
+				LoadModule();
+    }
+
+    function LoadModule() {
+        // Register and load a new module
+        MM.registerModule("SimpleGeoRSSModule", "/javascripts/SimpleGeoRSSModule.js");
+        MM.loadModule("SimpleGeoRSSModule", { callback: ModuleLoaded });
+    }
+
+    function ModuleLoaded() {
+        // Use the function provided by the newly loaded module
+        var myModule = new GeoRSSModule(map);
+        myModule.ImportGeoRSS(document.getElementById("txtGeoRSS").value);
+        collectionInfoBox = new MM.EntityCollection;
+        map.entities.push(collectionInfoBox);
+    }
+
+    //Display InfoBox
+    function showInfoBox(e) {
+        if (e.targetType == "pushpin") {
+            collectionInfoBox.clear();
+            infobox = new MM.Infobox(e.target.getLocation(), { title: e.target.title, description: e.target.description, offset: new MM.Point(0, 30), visible: true });
+            collectionInfoBox.push(infobox);
+        }
+        else if (e.targetType == "polygon" || e.targetType == "polyline") {
+            collectionInfoBox.clear();
+            infobox = new MM.Infobox(new MM.Location(e.target.anchorLat, e.target.anchorLon), { title: e.target.title, description: e.target.description, offset: new MM.Point(0, 0), visible: true });
+            collectionInfoBox.push(infobox);
+        }
+    }
+
+    function hideInfobox(e) {
+        try {
+            infobox.setOptions({ visible: false });
+        }
+        catch (err) {
+        }
+    }
+		
+		
+</script>
+<% end %>
+<div id='divCtrl' style="display:none;">
+      <a style="margin-left:10px">GeoRSS-Feed</a>
+      <input id="txtGeoRSS" type="text" style="margin-top:4px; margin-left:5px" value="<%= @map.georss.url %>" />
+      <input id="Button1" type="button" value="Import" onclick="LoadModule()" />
+  </div>
+

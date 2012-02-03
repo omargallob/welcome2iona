@@ -1,0 +1,12 @@
+
+	<div id="sitemap" class="holder container_12">
+	<%= render_navigation  :items => @main_items,:expand_all => true %>
+	</div>
+	<div id="copyright" class="holder container_12">
+		<p>	
+			<a onclick="window.open(this.href,'Disclaimer','width=600,height=400,scrollbars,resizable,menubar,location,toolbar');return false" href="http://ourdisclaimer.com/?i=Isle-of-Iona" style="color:white;">Disclaimer</a> | 
+			<%= link_to "Sitemap", sitemap_path, :target => "_blank" %> |
+			Copyright &copy; Isle Of Iona <%= Date.today.strftime("%Y")%>
+			<span style="float:right">Designed by <%= link_to "Kelpie Creative", "http://kelpiecreative.com/" %></span>
+			</p>
+	</div>

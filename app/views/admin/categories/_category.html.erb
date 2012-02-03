@@ -1,0 +1,14 @@
+<tr class="<%= cycle("odd","even") %>">
+  <td style="text-align:left;"><%= " - " unless category.parent_id.blank? %><%= category.title %></td>
+
+  <td><%= category.navlabel %></td>
+
+  <td><%= category.page.name unless category.page.blank? %></td>
+  <td><%= category.parent_id %></td>
+  <td><%= category.position %></td>
+  <td><%= category.posts.count unless category.parent_id.blank? %></td>
+  <td><%= link_to image_tag("system/buttons/show.png",:width => "15")	, admin_category_path(category) %></td>
+  <td><%= link_to image_tag("system/buttons/edit.png",:width => "15"), edit_admin_category_path(category) %></td>
+  <td><%= link_to image_tag("system/buttons/delete.png",:width => "15"), admin_category_path(category), :confirm => 'Are you sure?', :method => :delete %></td>
+</tr>
+<%= render :partial => category.subcategories %>

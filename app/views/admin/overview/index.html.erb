@@ -1,0 +1,23 @@
+<% title "Admin::Overview" %>
+<h1 class="title" style="margin-bottom:10px;">Admin::Overview</h1>
+<table id="list">
+	<thead>
+		<tr><th class="title">Section</th><th></th>		<th>Total</th></tr>
+	</thead>
+	<tr><td class="title"><strong>Pages</strong></td><td>:</td><td> <%= Page.all.count %></td></tr>
+	<tr><td class="title"><strong>Galleries (Uploads)</strong></td><td>:</td><td> <%= Gallery.all.count %> (<%= Upload.all.count %>)</td></tr>
+	<tr><td class="title"><strong>Categories (Subcategories)</strong></td><td>:</td><td> <%= Category.find_main.count %> (<%= Category.find_all_sub.count %>)</td></tr>
+	<tr><td class="title"><strong>Posts (pictures)</strong></td><td>:</td><td> <%= Post.all.count %> (<%= Picture.all.count %>)</td></tr>
+	<tr><td class="title"><strong>Maps</strong></td><td>:</td><td> <%= Map.all.count %></td></tr>
+</table>
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li><p><%= link_to  "New Post", new_admin_post_path %></p></li>
+		<li><p><%= link_to  "Edit a Page", admin_pages_path %></p></li>
+
+		<li><p><%= link_to  "Create a Gallery", new_admin_gallery_path %></p></li>
+		<li><p><%= link_to  "Add a Map", new_admin_map_path %></p></li>
+	</ul>
+<% end %>

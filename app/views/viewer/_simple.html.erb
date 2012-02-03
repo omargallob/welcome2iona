@@ -1,0 +1,14 @@
+
+<%= content_tag :h1, link_to(simple.title, viewer_sub_path(@parent.name,simple.page.name)) unless simple.page.blank? %><!-- ) -->
+<%= content_tag :h1, simple.title if simple.page.blank? %>
+
+<% if simple.image_url.to_s.present? %>
+	<%= link_to(image_tag(simple.image_url.to_s, :width => "610"), viewer_sub_path(@parent.name,simple.page.name)) unless simple.page.blank? %>
+	<%= image_tag(simple.image_url.to_s,:width => "610") if simple.page.blank? %>
+<% end %>
+
+
+
+<%= simple.body.html_safe %>
+
+<p>	<%= link_to("read more", viewer_sub_path(@parent.name,simple.page.name)) unless simple.page.blank? %></p>

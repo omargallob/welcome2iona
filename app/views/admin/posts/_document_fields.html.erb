@@ -1,0 +1,7 @@
+<div class="fields">
+<%= f.input :title, :label => "Document Title" %>
+
+<%= f.input :pdf, :as => :file %>
+<%= f.input :_destroy, :as => :hidden %>
+<%= link_to_remove_fields "remove", f %>
+</div>

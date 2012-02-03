@@ -1,0 +1,10 @@
+	<%= content_tag :h1, simple.title %>
+	<% if simple.page.blank? %>
+	<%= image_tag simple.image_url.to_s, :alt => simple.image_title, :style=>"margin-top:10px;"  if simple.image_url.present?  and simple.image_title.present?  %>
+	
+
+	<%= image_tag simple.image_url(:large).to_s, :style=>"margin-top:10px;" if simple.image_url.present? and simple.image_title.blank? %>
+	<% end %>
+	<%= simple.body.html_safe unless simple.body.blank? %>
+	<p><%= link_to image_tag("system/buttons/edit.png",:width => "15"), edit_polymorphic_url([:admin, @page, simple])%></p>
+	

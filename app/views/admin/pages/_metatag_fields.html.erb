@@ -1,0 +1,8 @@
+<div class="fields">
+
+	<%= f.input :title,:input_html=>{:class => "validate[required]"} %>
+	<%= f.input :description,:input_html=>{:class => "validate[required]"} %>
+	<%= f.input :keywords,:input_html=>{:class => "validate[required]"} %>
+	<%= f.input :metatagable_id, :as => :hidden %>
+	<%= f.input :metatagable_type, :as => :hidden %>
+</div>

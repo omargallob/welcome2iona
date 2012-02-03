@@ -1,0 +1,9 @@
+<tr class="<%= cycle("odd","even") %>">
+  <td><%= gallery.title %></td>
+  <td><%= gallery.category.title unless gallery.category.blank? %></td>
+  <td><%= gallery.pictures.count %></td>
+  <td><%= gallery.created_at.strftime("%d-%b-%Y") %></td>
+  <td><%= link_to(image_tag("system/buttons/show.png", :width => "15"), admin_gallery_path(gallery)) %></td>
+  <td><%= link_to(image_tag("system/buttons/edit.png", :width => "15"), edit_admin_gallery_path(gallery)) %></td>
+  <td><%= link_to(image_tag("system/buttons/delete.png", :width => "15"), admin_gallery_path(gallery), :confirm => 'Are you sure?', :method => :delete) %></td>
+</tr>

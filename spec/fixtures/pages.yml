@@ -1,0 +1,17 @@
+one:
+  name: MyString
+  title: MyString
+  navlabel: MyString
+  position: 1
+  parent_id: 1
+  body: MyText
+  image: MyString
+
+two:
+  name: MyString
+  title: MyString
+  navlabel: MyString
+  position: 1
+  parent_id: 1
+  body: MyText
+  image: MyString

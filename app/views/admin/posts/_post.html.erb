@@ -1,0 +1,12 @@
+ <tr class="<%= cycle("odd","even") %>">
+    <td><%= post.title %></td>
+    <td><%= post.category.parent.title unless post.category.blank? and post.category.parent.blank? %> - <%= post.category.title unless post.category.blank? %></td>
+		<td><%= post.published %></td>
+    
+    <td><%= post.published_on.strftime("%d %b %Y")%></td>
+    <td><%= post.uploads.count %></td>
+  
+    <td><%= link_to image_tag("system/buttons/show.png",:width => "15"), admin_post_path(post) %></td>
+    <td><%= link_to image_tag("system/buttons/edit.png",:width => "15"), edit_admin_post_path(post) %></td>
+    <td><%= link_to image_tag("system/buttons/delete.png",:width => "15"), admin_post_path(post), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>

@@ -1,0 +1,15 @@
+<%= simple_form_for([:admin,@parent,@simple],:html => {:multipart => true}) do |f| %>
+<div class="fields">
+
+	<%= f.input :title %>
+	<%= f.input :body,:input_html=>{:class => "mceEditor validate[required]"} %>
+	<%= f.input :position, :collection => 1..20 %>
+	<%= f.input :image_title %>
+	<%= f.input :image, :as => :file  %>
+	<%= f.input :simpleable_id, :as => :hidden %>
+	<%= f.input :simpleable_type, :as => :hidden %>
+	<%= f.input :page_id, :collection => Page.all.map{|x| [ x.navlabel,x.id]} unless @parent.parent = nil %>
+	<%# link_to_remove_fields "remove", f %>
+	<p><%= f.submit %></p>
+</div>
+<% end %>

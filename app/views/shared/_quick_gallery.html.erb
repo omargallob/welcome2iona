@@ -1,0 +1,6 @@
+<h1>Quick Gallery:</h1>
+<ul id="q_gallery">
+	<% Picture.limit(4).shuffle.each do |u| %>
+	<li><%= link_to(image_tag(u.image_url(:large_thumb)), u.image_url, :class=>"group") %></li>
+	<% end %>
+</ul>

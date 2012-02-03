@@ -1,0 +1,30 @@
+<% title t("headers.admin.galleries") %>
+<h1 class="title" style="margin:10px 0;">Galleries</h1>
+<table id="list" style="margin:10px 0;">
+	<thead style="border-bottom:1px solid #3C4D6F;">
+  <tr>
+    <th>Title</th>
+    <th>Category</th>
+    <th>Pictures</th>
+    <th>Created</th>
+		<th></th>		<th></th>		<th></th>
+  </tr>
+	</thead>
+  <tbody>
+		<%= render :partial => @galleries %>
+	</tbody>
+</table>
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li><p><%= link_to "New Gallery", new_admin_gallery_path %></p></li>
+	</ul>
+<% end %>
+<% content_for(:script) do %>
+<script>
+$(document).ready(function() {
+ 	$('#list').dataTable();
+});
+</script>
+<% end %>

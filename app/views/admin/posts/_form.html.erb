@@ -1,0 +1,37 @@
+<%= simple_form_for([:admin,@post], :html=>{:multipart => true}) do |f| %>
+
+ 	<%= f.input :published,:as => :radio unless @post.image.blank? and @post.body.blank? %>
+  <%= f.input :title,:input_html=>{:class => "validate[required]"} %>
+  <%= f.input :body,:input_html=>{:class => "mceEditor validate[required]"} %>
+	
+
+  <%= f.association :category, :collection => @subcategories,:input_html=>{:class => "validate[required]"} %>
+
+  <%= f.input :published_on, :as => :date %>
+
+  <%= f.input :start_at, :as => :date %>
+  <%= f.input :end_at, :as => :date %>
+  <!--<%= f.input :image,:as=>:file, :label => "Thumb image" %>-->
+
+<div class="extra_info">
+	<h1>Exta Info</h1>
+  <%= f.input :open,:as =>:text,:input_html=>{:class => "mceEditor"} %>
+  <%= f.input :rates,:as =>:text,:input_html=>{:class => "mceEditor"} %>
+  <%= f.input :address %>
+  <%= f.input :website %>
+  <%= f.input :phone %>
+  <%= f.input :email %>
+
+		<%= f.simple_fields_for :albums, @post.albums do |builder| %>
+		 <%= render "album_fields", :f => builder %>
+		<% end %>
+</div>
+	<h1>Metatag</h1>
+		<%= f.simple_fields_for :metatag do |builder| %>
+		 <%= render "shared/metatag_fields", :f => builder %>
+		<% end %>
+		
+		
+
+  <p><%= f.submit %></p>
+<% end %>

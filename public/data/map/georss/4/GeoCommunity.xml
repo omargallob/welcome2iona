@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:georss="http://www.georss.org/georss" version="2.0">
+  <channel>
+    <title>maps1</title>
+    <link>http://www.bing.com/maps</link>
+    <description />
+    <item>
+      <title>test 1</title>
+      <link>http://www.bing.com/maps/?cid=E7B235AF9B75E8C5!114</link>
+      <description />
+      <guid isPermaLink="false">f757c5b8e4d8177d</guid>
+      <pubDate>Wed, 25 Jan 2012 14:42:11 GMT</pubDate>
+      <georss:point>56.337828716034316 -6.39754152297974</georss:point>
+    </item>
+    <item>
+      <title>Untitled item</title>
+      <link>http://www.bing.com/maps/?cid=E7B235AF9B75E8C5!114</link>
+      <description />
+      <guid isPermaLink="false">2b9508fc2508c55f</guid>
+      <pubDate>Wed, 25 Jan 2012 14:42:17 GMT</pubDate>
+      <georss:point>56.33288054081095 -6.399086475372318</georss:point>
+    </item>
+  </channel>
+</rss>

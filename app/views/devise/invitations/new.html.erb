@@ -1,0 +1,20 @@
+<h2>Send an invitation</h2>
+
+<%= simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :post } do |f| %>
+  <%= devise_error_messages! %>
+
+	<%= f.input :name %>
+	<%= f.input :surname %>
+	<%= f.input :email %>
+  
+  <p><%= f.submit "Send an invitation" %></p>
+<% end %>
+
+
+<% content_for(:options) do %>
+	<h1>Options</h1>
+	<ul>
+		<li><p><%= link_to "Back", :back %></p></li>
+		<li><p><%= link_to "Overview", admin_root_path %></p></li>
+	</ul>
+<% end %>

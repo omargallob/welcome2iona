@@ -1,0 +1,72 @@
+	<li>
+		<div class="image_holder blocks">
+			<%= link_to image_tag(post.uploads.first.image_url(:square).to_s, :class=>"large"),post.uploads.cropped.first.image_url.to_s, :class=>"lightbox",:rel => "#{post.id}"  unless post.uploads.cropped.count == 0 %>
+			<%= image_tag("empty.png", :class=>"large")  if post.uploads.count == 0 %>
+			<% if post.uploads.count > 2 %>
+
+				<% for  upload in (post.uploads.cropped.delete_if{|u| u.id == post.uploads.first.id})  %>
+					<%= link_to image_tag(upload.image_url(:thumb).to_s, :class=>"small #{cycle('left','center','right')}"),upload.image_url.to_s, :class=>"lightbox",:rel => "#{post.id}"   %>
+				<% end %>
+			<% end %>
+		</div>
+		<div class="main_content blocks <%=  post.category.parent.title.gsub("/","+") %>">
+			<h3>
+				<%= link_to post.category.title, viewer_index_subfiltered_posts_path(post.category.parent.page.name.gsub("'","$"), post.category.parent.navlabel.gsub(" ","_").gsub("'","$"), post.category.title.gsub("/","+")) unless post.category.parent.title == "What's On" %>
+				<% if post.category.parent.title == "What's On" %>
+					<% if post.start_at.present? %>
+						<% if post.end_at.present? %>
+							<%= post.start_at.strftime("%d").to_i.ordinalize  %> - <%= post.end_at.strftime("%d").to_i.ordinalize  %> <%= post.start_at.strftime("%B %Y") %>
+						<% else %>
+							<%= post.start_at.strftime("%d").to_i.ordinalize  %> <%= post.start_at.strftime("%B %Y")  %>
+						<% end %>
+					<% else %>
+						<%= post.published_on.strftime("%d").to_i.ordinalize if post.start_at.blank? %> <%= post.published_on.strftime("%B %Y")  %>
+					<% end %>
+				<% end %>
+			</h3>
+			<h2><%= post.title %></h2>
+			<%= content_tag :p, "<time>#{post.published_on.strftime("%d-%m-%Y")}</time>".html_safe if post.category.parent.title == "News"   %>
+
+			<%= post.body.html_safe %>
+			<p class="gotolink"><%= link_to "Go to website", "http://#{post.website}", :target =>"_blank" unless post.category.parent.title == "News" or post.website.blank? %></p>
+		</div>
+		<% unless post.category.parent.title == "News"  %>
+		<div class="extra_info blocks">
+				<h3>Info</h3>
+				<table>
+
+					<% unless post.open.blank? %>
+					<tr>
+						<td class="title"><p>Open:</p></td><td class="space"></td><td class="descr"><%= post.open.html_safe %></td>
+					</tr>
+					<% end %>
+					<% unless post.rates.blank? %>
+					<tr>
+						<td class="title"><p>Rates:</p></td><td class="space"></td><td class="descr"><%= post.rates.html_safe %></td>
+					</tr>
+					<% end %>
+							
+					<% unless post.address.blank? %>
+					<tr>
+						<td class="title"><p>Address:</p></td><td class="space"></td><td class="descr"><p><%= post.address %></p></td>
+					</tr>
+					<% end %>
+					<% unless post.website.blank? %>
+					<tr>
+						<td class="title"><p>Website:</p></td><td class="space"></td><td class="descr"><p><%= link_to(truncate(post.website,:size => 15), "http://#{post.website}", :target =>"_blank")  %></p></td>
+					</tr>
+					<% end %>
+					<% unless post.phone.blank? %>
+					<tr>
+						<td class="title"><p>Phone:</p></td><td class="space"></td><td class="descr"><p><%= post.phone %></p></td>
+					</tr>
+					<% end %>
+					<% unless post.email.blank? %>
+					<tr>
+						<td class="title"><p>Email:</p></td><td class="space"></td><td class="descr"><p><%= post.email %></p></td>
+					</tr>
+					<% end %>
+				</table>
+		</div>
+		<% end %>
+	</li>
