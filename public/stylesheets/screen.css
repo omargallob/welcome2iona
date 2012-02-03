@@ -145,8 +145,8 @@ body #wrapper header#top nav {
   height: 48px;
   float: left;
   position: absolute;
-  background: url(/images/system/bg/header.png) repeat-x 0 -115px;
-  box-shadow: 0px 4px 6px #7A7A7A;
+  background: url(/images/system/bg/header.png) repeat-x 0 -116px;
+  box-shadow: 0px 2px 4px #7A7A7A;
 }
 /* line 112, ../src/screen.scss */
 body #wrapper header#top nav ul {
@@ -162,10 +162,10 @@ body #wrapper header#top nav ul li:hover {
 body #wrapper header#top nav ul li.selected {
   background: url(/images/system/bg/navigation_selected.png) repeat-x;
   cursor: hand;
-  margin-top: 1px;
+  margin-top: 0px;
   position: relative;
   z-index: 20;
-  height: 47px;
+  height: 48px;
 }
 /* line 140, ../src/screen.scss */
 body #wrapper header#top nav ul li.selected a {
@@ -174,10 +174,10 @@ body #wrapper header#top nav ul li.selected a {
 /* line 145, ../src/screen.scss */
 body #wrapper header#top nav ul li {
   float: left;
-  height: 47px;
+  height: 48px;
   padding: 0;
   text-align: center;
-  margin-top: 1px;
+  margin-top: 0px;
 }
 /* line 146, ../src/screen.scss */
 body #wrapper header#top nav ul li .arrow {
@@ -928,7 +928,7 @@ body #wrapper section#main section#center ul#posts li div.extra_info table tr td
 body #wrapper section#main section#center ul#posts li div.extra_info table tr td p {
   padding: 0px;
   margin: 0px;
-  font-size: 12px;
+  font-size: 14px;
 }
 /* line 1147, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.extra_info table tr td p a {
@@ -951,7 +951,7 @@ body footer {
   background: #73b13f;
   color: white;
   margin: 10px 0 20px 10px;
-  box-shadow: 0 6px 8px 4px #7A7A7A;
+  box-shadow: 0px 2px 4px #7A7A7A;
 }
 /* line 1193, ../src/screen.scss */
 body footer h2 {
@@ -960,7 +960,7 @@ body footer h2 {
 }
 /* line 1199, ../src/screen.scss */
 body footer #copyright {
-  width: 908px;
+  width: 914px;
   padding: 13px;
   float: left;
 }
