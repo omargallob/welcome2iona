@@ -36,6 +36,8 @@ gem 'google-weather'
 #gem "globalize3"
 #gem 'translate_routes'
 #seo
+
+gem 'devise-invitable'
 gem 'sitemap_generator'
 gem "meta-tags"
 gem "jammit","0.6"
