@@ -12,7 +12,7 @@ class Admin::PicturesController <  Admin::BaseController
          redirect_to admin_gallery_picture_crop_path(@picture.gallery.id,@picture.id)               
     else
       flash.now[:notice] = 'Upload was not created.'
-      render :controller => "galleries",:action => 'show', :id=>@gallery.id
+      redirect_to :controller => "galleries",:action => 'show', :id=>@gallery.id
     end
   end
   
