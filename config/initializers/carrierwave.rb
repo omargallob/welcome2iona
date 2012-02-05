@@ -1,12 +1,6 @@
 CarrierWave.configure do |config|
   config.permissions = 0777
-  config.fog_credentials = {
-     :provider               => 'AWS',       # required
-     :aws_access_key_id      => 'AKIAI7DG2I3UGHEC6FKA',       # required
-     :aws_secret_access_key  => '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',       # required
-    
-   }
-  config.fog_directory  = 'isleofiona-development'                     # required
+  config.storage = :file
    # 
    #  config.permissions = 0777
    #  config.storage = :s3

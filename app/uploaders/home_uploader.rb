@@ -1,14 +1,14 @@
 # encoding: utf-8
 
 class HomeUploader < CarrierWave::Uploader::Base
-  permissions 0777
+  #permissions 0777
 
   # Include RMagick or ImageScience support:
   include CarrierWave::RMagick
   # include CarrierWave::ImageScience
 
   # Choose what kind of storage to use for this uploader:
-  storage :fog
+  #storage :fog
   #storage :s3
   #930x282
 
