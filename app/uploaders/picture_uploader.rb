@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class PictureUploader < CarrierWave::Uploader::Base
+  permissions 0777
 
   include CarrierWave::RMagick
 

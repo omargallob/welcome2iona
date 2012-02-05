@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class ImageUploader < CarrierWave::Uploader::Base
+  permissions 0777
 
   # Include RMagick or ImageScience support:
   include CarrierWave::RMagick
