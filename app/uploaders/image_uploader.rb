@@ -6,7 +6,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   #storage :fog
   
   # Include RMagick or ImageScience support:
-  include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
   CarrierWave.root = Rails.root.join('public')
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"

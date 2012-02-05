@@ -19,7 +19,7 @@ gem 'aws-s3'
 gem 'rack-cache', :require => 'rack/cache'
 gem "rmagick"
 gem "fog"
-gem 'carrierwave', :git => "git://github.com/jnicklas/carrierwave.git"
+gem 'carrierwave' , :git => "git://github.com/jnicklas/carrierwave.git"
 gem "nifty-generators"
 gem "simple_form",'1.4.2'
 gem "simple-navigation"
