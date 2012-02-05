@@ -5,6 +5,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   #storage :fog
   
   include CarrierWave::RMagick
+    CarrierWave.root = Rails.root.join('public')
 
 
   def store_dir

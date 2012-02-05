@@ -6,7 +6,7 @@ class HomeUploader < CarrierWave::Uploader::Base
   # Include RMagick or ImageScience support:
   include CarrierWave::RMagick
   # include CarrierWave::ImageScience
-
+  CarrierWave.root = Rails.root.join('public')
   # Choose what kind of storage to use for this uploader:
   #storage :fog
   #storage :s3
