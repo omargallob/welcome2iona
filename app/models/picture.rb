@@ -21,7 +21,7 @@ class Picture < ActiveRecord::Base
   end
     
   def image_geometry
-    img = MiniMagick::Image.from_file("public/"+self.image.url)
+    img = MiniMagick::Image.from_file("public"+self.image.url)
     @geometry = {:width => img[:width], :height => img[:height] }
   end
 
