@@ -68,7 +68,7 @@ class Post < ActiveRecord::Base
       end
       
       def image_geometry
-        img = Magick::Image::read(self.image_url).first
+        img = MiniMagick::Image::read(self.image_url).first
         @geometry = {:width => img.columns, :height => img.rows }
       end
       # 

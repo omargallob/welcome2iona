@@ -34,7 +34,7 @@ class Page < ActiveRecord::Base
    end
    #     
    def image_geometry
-     img = Magick::Image::read(self.home_url).first
+     img = MiniMagick::Image::read(self.home_url).first
      @geometry = {:width => img.columns, :height => img.rows }
    end
    # 
