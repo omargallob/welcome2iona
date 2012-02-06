@@ -20,7 +20,7 @@ class Upload < ActiveRecord::Base
   end
   #     
   def image_geometry
-    img = MiniMagick::Image.open(self.home_url)
+    img = MiniMagick::Image.open(self.path)
     @geometry = {:width => img.columns, :height => img.rows }
   end
   # 
