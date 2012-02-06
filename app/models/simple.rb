@@ -16,7 +16,7 @@ class Simple < ActiveRecord::Base
    end
    #     
    def image_geometry
-     img = MiniMagick::Image::read(self.image_url).first
+     img = MiniMagick::Image.open(self.home_url)
      @geometry = {:width => img.columns, :height => img.rows }
    end
    # 
