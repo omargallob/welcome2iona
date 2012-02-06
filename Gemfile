@@ -18,6 +18,7 @@ gem "cancan"
 gem 'aws-s3'
 gem 'rack-cache', :require => 'rack/cache'
 gem "rmagick"
+gem "mini_magick"
 gem "fog"
 gem 'carrierwave' , :git => "git://github.com/jnicklas/carrierwave.git"
 gem "nifty-generators"

@@ -4,7 +4,8 @@ class HomeUploader < CarrierWave::Uploader::Base
   #permissions 0777
 
   # Include RMagick or ImageScience support:
-  include CarrierWave::MiniMagick  # include CarrierWave::ImageScience
+  include CarrierWave::MiniMagick
+  # include CarrierWave::ImageScience
   CarrierWave.root = Rails.root.join('public')
   # Choose what kind of storage to use for this uploader:
   #storage :fog

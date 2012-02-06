@@ -4,10 +4,8 @@ class PictureUploader < CarrierWave::Uploader::Base
   #permissions 0777
   #storage :fog
   
-  include CarrierWave::RMagick
-    CarrierWave.root = Rails.root.join('public')
-
-
+  include CarrierWave::MiniMagick
+  CarrierWave.root = Rails.root.join('public')
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
