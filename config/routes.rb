@@ -20,7 +20,7 @@ IsleOfIona::Application.routes.draw do
   resources :maps
   match "/:name/cat/:parent/filter/:subcat/map" => "maps#show", :as => :mapper_show_subfiltered
   match "/:name/cat/:parent/filter/:subcat(/page/:page)(/per/:per)" => "posts#index", :as => :viewer_index_subfiltered_posts
-  match "/:name/cat/:parent(/page/:page)(/per/:per)" => "posts#index", :as => :viewer_index_filtered_posts
+  match "/:name/cat/:parent" => "posts#index", :as => :viewer_index_filtered_posts
   resources :posts do
     #get "/:name/cat/:parent/filter/:subcat/(page/:page/)(per/:per)", :action =>:index, :on =>:collection
   end 
