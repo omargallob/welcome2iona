@@ -35,15 +35,17 @@ class Page < ActiveRecord::Base
    #     
    def image_geometry
      img = MiniMagick::Image.open(self.home_url)
-     @geometry = {:width => img.columns, :height => img.rows }
+     @geometry = {:width => img[:width], :height => img[:height] }
    end
    # 
    private
 
 
    def reprocess_home
-     home.reprocess(crop_x,crop_y,crop_w,crop_h)
-     home.recreate_versions!
+     image = MiniMagick::Image.from_file("public"+self.home.url)
+     crop_params = "#{crop_w}x#{crop_h}+#{crop_x}+#{crop_y}"
+     image.crop(crop_params)
+     image
    end
   
   scope :cropped,lambda{

@@ -68,14 +68,17 @@ class Post < ActiveRecord::Base
       end
       
       def image_geometry
-        img = MiniMagick::Image.open(self.image_url)
-        @geometry = {:width => img.columns, :height => img.rows }
+        img = MiniMagick::Image.from_file("public"+self.image.url)
+        @geometry = {:width => img[:width], :height => img[:height] }
+
       end
       # 
       private
       def reprocess_image
-        image.reprocess(crop_x,crop_y,crop_w,crop_h)
-        image.recreate_versions!
+          image = MiniMagick::Image.from_file("public"+self.image.url)
+          crop_params = "#{crop_w}x#{crop_h}+#{crop_x}+#{crop_y}"
+          image.crop(crop_params)
+          image
       end
       def original_document
         self.document.original_filename
