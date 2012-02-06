@@ -59,7 +59,7 @@ class Post < ActiveRecord::Base
   validates_presence_of :category
   validates :image, 
       :file_size => { 
-        :maximum => 1.megabytes.to_i 
+        :maximum => 2.megabytes.to_i 
       }
   
   after_update :reprocess_image, :if => :cropping?

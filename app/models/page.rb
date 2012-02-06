@@ -60,7 +60,7 @@ class Page < ActiveRecord::Base
   }
   validates :image, 
       :file_size => { 
-        :maximum => 1.megabytes.to_i 
+        :maximum => 2.megabytes.to_i 
       }
   # def self.find_main
   #     Page.order("position").where("parent_id IS ?", nil)

@@ -13,7 +13,7 @@ class Picture < ActiveRecord::Base
   
   validates :image, 
       :file_size => { 
-        :maximum => 1.megabytes.to_i 
+        :maximum => 2.megabytes.to_i 
       }
 
   def cropping?
