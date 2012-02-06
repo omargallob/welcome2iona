@@ -1,13 +1,14 @@
 require 'file_size_validator' 
 class Post < ActiveRecord::Base
   has_event_calendar
-  attr_accessible :title, :body,:body_html, :category_id, :position, :published,:published_on, :start_at, :end_at, :image,:document, :category_parent, :crop_x, :crop_y, :crop_h, :crop_w, :open,:rates,:address,:website,:phone, :email
+  attr_accessible :title, :body,:body_html, :category_id, :position, :published,:published_on, :start_at, :end_date, :end_at, :image,:document, :category_parent, :crop_x, :crop_y, :crop_h, :crop_w, :open,:rates,:address,:website,:phone, :email
 
   belongs_to :category
   #mount_uploader :image, ThumbUploader
   #mount_uploader :document, DocumentUploader
   #albums
   has_many :albums, :as => :albumable, :dependent => :destroy
+
   attr_accessible :albums_attributes 
   attr_writer :albums_attributes,:category_parent
   accepts_nested_attributes_for :albums, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true

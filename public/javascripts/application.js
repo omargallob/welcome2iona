@@ -28,6 +28,18 @@ $(document).ready(function(){
 	$("footer ul li a").attr("target","_blank");
 	$(".group").colorbox({rel:'group',transition:"fade"});
 	$("header nav ul li#home a").attr("href","/");
+	$("#end_date").click(function() {
+	//	alert($("#post_end_at").html());
+		if ($('#end_date').is(':checked')) {
+			$('#post_end_at_1i').removeAttr('disabled');;
+			$('#post_end_at_2i').removeAttr('disabled');;
+			$('#post_end_at_3i').removeAttr('disabled');;
+		    } else {
+		     	$("#post_end_at_1i").attr('disabled', true);
+					$("#post_end_at_2i").attr('disabled', true);
+					$("#post_end_at_3i").attr('disabled', true);
+		    }   
+	});
 	//$(".mceEditor").markItUp(mySettings);
 	//$("section#center p a").attr("target","_blank");
 	//$("section#center h1").addClass("title");

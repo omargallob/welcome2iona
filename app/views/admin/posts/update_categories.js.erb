@@ -2,7 +2,7 @@
 	<% if  @category.title == "What's On" %>
 		$("#post_start_at_1i").parent().fadeIn("slow");		
 		$("#post_end_at_1i").parent().fadeIn("slow");
-		
+		$("#end_date").parent().fadeIn("slow");
 		$("#post_published_on_1i").parent().fadeOut("slow");
 	<% elsif  @category.title == "News" %>
 		$("#post_published_on_1i").parent().fadeIn("slow");	
@@ -17,6 +17,7 @@
 	$("#post_published_on_1i").parent().fadeOut("slow");
 	$("#post_start_at_1i").parent().fadeOut("slow");		
 	$("#post_end_at_1i").parent().fadeOut("slow");
+	$("#post_end_date").parent().fadeOut("slow");
 	
 			$(".extra_info").fadeIn("slow");
 <% end %>
