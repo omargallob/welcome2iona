@@ -948,7 +948,7 @@ body #wrapper section#main section#center table tr td img {
 body footer {
   float: left;
   width: 940px;
-  background: #73b13f;
+  background: #8CA31C;
   color: white;
   margin: 10px 0 20px 10px;
   box-shadow: 0px 2px 4px #7A7A7A;
@@ -972,25 +972,26 @@ body footer #copyright p {
 body footer #copyright p a {
   color: white;
   text-decoration: none;
+  font-weight: bold;
 }
-/* line 1215, ../src/screen.scss */
+/* line 1217, ../src/screen.scss */
 body footer #copyright p a:hover {
   text-decoration: underline;
 }
-/* line 1221, ../src/screen.scss */
+/* line 1223, ../src/screen.scss */
 body footer #sitemap {
   float: left;
   width: 940px;
   background: url(/images/system/bg/footer_blue.png) repeat;
 }
-/* line 1229, ../src/screen.scss */
+/* line 1231, ../src/screen.scss */
 body footer ul {
   width: 890px;
   float: left;
   padding: 0px 0px 0 0px;
   margin: 5px 20px 20px 20px;
 }
-/* line 1238, ../src/screen.scss */
+/* line 1240, ../src/screen.scss */
 body footer ul li {
   margin-top: 20px;
   font-size: 10px;
@@ -998,37 +999,37 @@ body footer ul li {
   width: 140px;
   margin-right: 5px;
 }
-/* line 1249, ../src/screen.scss */
+/* line 1251, ../src/screen.scss */
 body footer ul li a {
   color: white;
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 1259, ../src/screen.scss */
+/* line 1261, ../src/screen.scss */
 body footer ul li a:hover {
   text-decoration: underline;
 }
-/* line 1263, ../src/screen.scss */
+/* line 1265, ../src/screen.scss */
 body footer ul li strong {
   font-size: 12px;
 }
-/* line 1267, ../src/screen.scss */
+/* line 1269, ../src/screen.scss */
 body footer ul li ul {
   width: 120px;
   margin: 0px;
 }
-/* line 1272, ../src/screen.scss */
+/* line 1274, ../src/screen.scss */
 body footer ul li ul li {
   line-height: 12px;
   margin: 5px 0 0 0;
 }
-/* line 1277, ../src/screen.scss */
+/* line 1279, ../src/screen.scss */
 body footer ul li ul li a {
   font-size: 12px;
   font-weight: normal;
 }
-/* line 1283, ../src/screen.scss */
+/* line 1285, ../src/screen.scss */
 body footer ul li ul li ul {
   display: none;
 }
