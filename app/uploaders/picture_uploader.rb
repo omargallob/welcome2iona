@@ -25,7 +25,7 @@ class PictureUploader < CarrierWave::Uploader::Base
           manipulate! do |img|
               img.crop(x.to_i, y.to_i, w.to_i, h.to_i, true) 
 
-              end
+          end
     resize_to_fill(757, 567)  
   end
 
