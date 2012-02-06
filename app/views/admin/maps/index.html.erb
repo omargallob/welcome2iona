@@ -1,5 +1,5 @@
 <% title "Maps" %>
-<h1 class="title">Maps</h1>
+<h1 class="title" style="margin-bottom:10px;">Maps</h1>
 <table id="list">
 	<thead>
 	  <tr>
@@ -19,4 +19,11 @@
 	<ul>
 		<li><p><%= link_to "New Map", new_admin_map_path %></p></li>
 	</ul>
+<% end %>
+<% content_for(:script) do %>
+<script>
+$(document).ready(function() {
+ 	$('#list').dataTable();
+});
+</script>
 <% end %>

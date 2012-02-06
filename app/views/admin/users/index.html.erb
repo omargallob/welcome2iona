@@ -1,5 +1,5 @@
 <% title "Admin Users" %>
-<h1 class="title">Admin Users</h1>
+<h1 class="title" style="margin-bottom:10px;">Admin Users</h1>
 <table id="list">
 	<thead>
 	  <tr>
@@ -21,4 +21,12 @@
 	<ul>
 		<li><p><%= link_to "Invite user", new_admin_invitation_path %></p></li>
 	</ul>
+<% end %>
+
+<% content_for(:script) do %>
+<script>
+$(document).ready(function() {
+ 	$('#list').dataTable();
+});
+</script>
 <% end %>
