@@ -44,8 +44,8 @@ class Page < ActiveRecord::Base
    def reprocess_image
        image = MiniMagick::Image.from_file("public"+self.home.url)
        crop_params = "#{crop_w}x#{crop_h}+#{crop_x}+#{crop_y}"
-       home.crop(crop_params)
-       home
+       image.crop(crop_params)
+       image
    end
    
   scope :cropped,lambda{
