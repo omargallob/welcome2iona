@@ -6,3 +6,10 @@ en:
   headers:
     admin:
       galleries: "Galleries"
+  activerecord:
+    errors:
+      models:
+        page:
+          attributes:
+            home:
+              size_too_big: "File Size to Big"
