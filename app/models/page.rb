@@ -34,7 +34,7 @@ class Page < ActiveRecord::Base
    end
    #     
    def home_geometry
-     img = MiniMagick::Image.open(self.home_url)
+     img = MiniMagick::Image.open("public"+self.home_url)
      @geometry = {:width => img[:width], :height => img[:height] }
    end
    # 
