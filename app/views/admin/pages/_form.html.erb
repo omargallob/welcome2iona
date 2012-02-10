@@ -11,6 +11,7 @@
  <%# f.input :image, :as => :file %>
  <%= f.input :image_title, :as => :string, :label => "Top Image Title" %>
  <%= f.input :home, :as => :file, :label => "Top Image" %>
+ <%= f.input :remove_home, :as => :boolean,:label => "Remove Top Image" if controller.action_name == "edit" %>
 <% if controller.action_name == "edit" and @page.simples.count > 0 %>
 	<!-- <h1>Sets</h1>
 	<%= f.fields_for :simples do |builder| %>

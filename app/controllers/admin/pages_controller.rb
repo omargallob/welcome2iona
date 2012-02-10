@@ -43,17 +43,24 @@ class Admin::PagesController < Admin::BaseController
 
   def update
     @page = Page.find(params[:id])
-    if @page.update_attributes(params[:page])
+ 
       
       if params[:page][:home].blank?
+          if @page.update_attributes(params[:page])
            redirect_to admin_page_path(@page.id)
+          else
+            render :action => 'edit'
+          end
+          
         else
+          @page.remove_home!
+          if @page.update_attributes(params[:page])
            redirect_to admin_page_crop_path(@page.id)                
-        end
-      #redirect_to admin_page_path(@page), :notice  => "Successfully updated page."
-    else
-      render :action => 'edit'
-    end
+           else
+             render :action => 'edit'
+           end
+           
+        end      
   end
 
   def destroy

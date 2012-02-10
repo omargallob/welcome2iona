@@ -58,8 +58,8 @@
 
     <section id="main" class="grid_12">
 		<% if @page and @page.home_url.to_s.present?%>
-			<%= image_tag @page.home_url.to_s, :class=>"header" if @page.image_title.blank? %>	
-			<%= image_tag @page.home_url.to_s, :class=>"header", :alt => @page.image_title if @page.image_title.present? %>
+			<%= image_tag @page.home_url(:large).to_s, :class=>"header" if @page.image_title.blank? %>	
+			<%= image_tag @page.home_url(:large).to_s, :class=>"header", :alt => @page.image_title if @page.image_title.present? %>
 		<% end %>
 			<section id="left-column" class="grid_2 side">
 
