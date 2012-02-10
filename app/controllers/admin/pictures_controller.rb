@@ -30,6 +30,7 @@ class Admin::PicturesController <  Admin::BaseController
     
     def destroy
        @picture = Picture.find(params[:id])
+       @picture..remove_image!
          @picture.destroy
          redirect_to admin_gallery_url(@picture.gallery.id), :notice => "Successfully destroyed picture."
     end

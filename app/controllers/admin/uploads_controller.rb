@@ -40,6 +40,7 @@ class Admin::UploadsController < Admin::BaseController
   
   def destroy
      @upload = Upload.find(params[:id])
+     @upload.remove_image!
        @upload.destroy
        redirect_to admin_post_url(@upload.album.albumable_id), :notice => "Successfully destroyed upload."
   end

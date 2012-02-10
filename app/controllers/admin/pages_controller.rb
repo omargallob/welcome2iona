@@ -65,6 +65,7 @@ class Admin::PagesController < Admin::BaseController
 
   def destroy
     @page = Page.find(params[:id])
+    @page.remove_home!
     @page.destroy
     redirect_to admin_pages_url, :notice => "Successfully destroyed page."
   end
