@@ -18,7 +18,7 @@ function update_crop(coords) {
 	var lh = $('#cropbox').height();
 
 
-	var ratio = <%= @page.image_geometry[:width] %> / lw;
+	var ratio = <%= @page.home_geometry[:width] %> / lw;
 
 	//var crop_y = Math.round(coords.y * ratio ) ;
 

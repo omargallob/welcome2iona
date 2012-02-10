@@ -33,7 +33,7 @@ class Page < ActiveRecord::Base
      !crop_x.blank? && !crop_y.blank?  && !crop_w.blank? && !crop_h.blank?
    end
    #     
-   def image_geometry
+   def home_geometry
      img = MiniMagick::Image.open(self.home_url)
      @geometry = {:width => img[:width], :height => img[:height] }
    end
@@ -58,7 +58,7 @@ class Page < ActiveRecord::Base
   scope :children,lambda{|id|
     where("pages.parent_id IS ?", id).order("position")
   }
-  validates :image, 
+  validates :home, 
       :file_size => { 
         :maximum => 2.megabytes.to_i 
       }
