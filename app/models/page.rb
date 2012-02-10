@@ -27,7 +27,7 @@ class Page < ActiveRecord::Base
   mount_uploader :home, HomeUploader  
   
   attr_accessor  :crop_x, :crop_y, :crop_h, :crop_w
-   after_update :home_geometry, :if => :cropping?
+   after_update :reprocess_image, :if => :cropping?
 
    def cropping?
      !crop_x.blank? && !crop_y.blank?  && !crop_w.blank? && !crop_h.blank?
@@ -41,7 +41,13 @@ class Page < ActiveRecord::Base
    private
 
 
-  
+   def reprocess_image
+       image = MiniMagick::Image.from_file("public"+self.home.url)
+       crop_params = "#{crop_w}x#{crop_h}+#{crop_x}+#{crop_y}"
+       home.crop(crop_params)
+       home
+   end
+   
   scope :cropped,lambda{
     where("pages.cropped = ?",true)
   }
