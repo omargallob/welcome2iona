@@ -1,5 +1,9 @@
 <% if @map.category.present? %><h1 class="title"><%= @map.category.parent.title %> | <%= @map.category.title %> <span class="actions posts">	<%= render :partial => "shared/sharedthis" %></span></h1>
-<% title "Maps | #{@map.category.parent.title} |  #{@map.category.title} " %><% end %>
+<% title "Maps | #{@map.category.parent.title} |  #{@map.category.title} " %>
+<% else %>
+<h1 class="title"><%= @map.title %>  <span class="actions posts">	<%= render :partial => "shared/sharedthis" %></span></h1>
+<% title "Maps | #{@map.title} " %>
+<% end %>
 <div id="tabs">
 <%= render :partial => @map %>
 </div>
