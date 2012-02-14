@@ -6,7 +6,7 @@ class MapsController < ApplicationController
   end
 
   def show
-    @category = Category.find_by_title(params[:subcat].gsub("+","/"))
+    @category = Category.find_by_title(params[:subcat].gsub("+","/").gsub("_"," "))
     if params[:id].present?
       @map = Map.find(params[:id])
     elsif @category.present? 
