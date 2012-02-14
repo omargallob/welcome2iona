@@ -1,5 +1,5 @@
-<h1 class="title"><%= @map.category.parent.title %> | <%= @map.category.title %> <span class="actions posts">	<%= render :partial => "shared/sharedthis" %></span></h1>
-<% title "Maps | #{@map.category.parent.title} |  #{@map.category.title} " %>
+<% if @map.category.present? %><h1 class="title"><%= @map.category.parent.title %> | <%= @map.category.title %> <span class="actions posts">	<%= render :partial => "shared/sharedthis" %></span></h1>
+<% title "Maps | #{@map.category.parent.title} |  #{@map.category.title} " %><% end %>
 <div id="tabs">
 <%= render :partial => @map %>
 </div>
@@ -7,7 +7,9 @@
 	<%= content_tag(:h1, "Quick Links", :class=>"light") %>
 	<%= render_navigation :level => 2,:items => @main_items %>
 	<ul>
-		<li><%= link_to "Overview",maps_path %></li>
+		<% Map.all.delete_if{|ca| ca.category.present?}.each do |m| %>
+			<li><%= link_to m.title,map_path(m.id) %></li>
+		<% end %>
 	<% @maps.delete_if{|z| z.category.blank?}.each do |map| %>
 		<li><%= link_to map.category.title,mapper_show_subfiltered_path(map.category.parent.page.name,map.category.parent.title.gsub(/ /,"_"),map.category.title.gsub("/","+").gsub(/ /,"_")) %></li>
 	<% end %>

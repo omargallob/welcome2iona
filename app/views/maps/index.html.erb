@@ -13,9 +13,13 @@
 	<%= content_tag(:h1, "Quick Links", :class=>"light") %>
 	<%= render_navigation :level => 2, :items => @main_items %>	
 	<ul class="filters">
+		<% @maps.delete_if{|z| z.category.present?}.each do |map| %>
+		<li><%= link_to map.title,map_path(map.id), :target =>"_blank" %></li>
+		<% end %>
 	<% @maps.delete_if{|z| z.category.blank?}.each do |map| %>
 	<li><%= link_to map.category.title,mapper_show_subfiltered_path(map.category.parent.page.name,map.category.parent.title.gsub(/ /,"_"),map.category.title.gsub("/","+").gsub(/ /,"_")), :target =>"_blank" %></li>
 	<% end %>
+
 	</ul>
 <% end %>
 

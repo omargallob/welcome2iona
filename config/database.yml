@@ -12,7 +12,7 @@ development:
   database: isle-of-iona_development
   pool: 5
   username: root
-  password: db_systemcontroller
+  password: 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -24,7 +24,7 @@ test:
   database: isle-of-iona_test
   pool: 5
   username: root
-  password: db_systemcontroller
+  password: 
   socket: /var/run/mysqld/mysqld.sock
 
 production:

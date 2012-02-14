@@ -17,7 +17,10 @@ IsleOfIona::Application.routes.draw do
 
   match "/sitemap" => "sitemap#index"
 
-  resources :maps
+  resources :maps # do
+  #   match ":map_id" => "maps#show", :as => :show_raw
+  #   end
+  #match "/maps/:map_id" => "maps#show", :as => :show_raw
   match "/:name/cat/:parent/filter/:subcat/map" => "maps#show", :as => :mapper_show_subfiltered
   match "/:name/cat/:parent/filter/:subcat(/page/:page)(/per/:per)" => "posts#index", :as => :viewer_index_subfiltered_posts
   match "/:name/cat/:parent" => "posts#index", :as => :viewer_index_filtered_posts
