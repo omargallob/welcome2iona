@@ -1,7 +1,7 @@
 class MapsController < ApplicationController
   def index
     @page = Page.find_by_name(params[:name])
-    @map = Map.find_by_title("General")
+    @map = Map.first
     @maps = Map.all
   end
 
