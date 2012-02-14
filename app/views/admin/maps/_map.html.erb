@@ -1,6 +1,8 @@
 <tr class="<%= cycle("odd","even") %>">
   <td><%= map.title %></td>
   <td><%= map.category.title unless map.category.blank? %></td>
+	
+  <td><%= map.georss_path unless map.georss_url.blank? %></td>
   <td><%= link_to image_tag("system/buttons/show.png",:width => "15"), admin_map_path(map) %></td>
   <td><%= link_to image_tag("system/buttons/edit.png",:width => "15"), edit_admin_map_path(map) %></td>
   <td><%= link_to image_tag("system/buttons/delete.png",:width => "15"), admin_map_path(map), :confirm => 'Are you sure?', :method => :delete %></td>
