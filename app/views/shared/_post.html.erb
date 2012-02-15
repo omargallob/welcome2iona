@@ -2,12 +2,12 @@
 		<div class="image_holder blocks">
 			<%= link_to image_tag(post.uploads.first.image_url(:square).to_s, :class=>"large"),post.uploads.cropped.first.image_url.to_s, :class=>"lightbox",:rel => "#{post.id}"  unless post.uploads.cropped.count == 0 %>
 			<%= image_tag("empty.png", :class=>"large")  if post.uploads.count == 0 %>
-			<% if post.uploads.count > 2 %>
+
 
 				<% for  upload in (post.uploads.cropped.delete_if{|u| u.id == post.uploads.first.id})  %>
 					<%= link_to image_tag(upload.image_url(:thumb).to_s, :class=>"small #{cycle('left','center','right')}"),upload.image_url.to_s, :class=>"lightbox",:rel => "#{post.id}"   %>
 				<% end %>
-			<% end %>
+
 		</div>
 		<div class="main_content blocks <%=  post.category.parent.title.gsub("/","+") %>">
 			<h3>
