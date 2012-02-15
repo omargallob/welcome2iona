@@ -11,7 +11,7 @@
 	<%= content_tag(:h1, "Quick Links", :class=>"light") %>
 	<%= render_navigation :level => 2,:items => @main_items %>
 	<ul>
-		<% Map.all.delete_if{|ca| ca.category.present?}.each do |m| %>
+		<% @maps.delete_if{|ca| ca.category.present?}.each do |m| %>
 			<li><%= link_to m.title,map_path(m.id) %></li>
 		<% end %>
 	<% @maps.delete_if{|z| z.category.blank?}.each do |map| %>

@@ -4,9 +4,9 @@
 			<%= image_tag("empty.png", :class=>"large")  if post.uploads.count == 0 %>
 
 
-				<% for  upload in (post.uploads.delete_if{|u| u.id == post.uploads.first.id})  %>
-					<%= link_to image_tag(upload.image_url(:thumb).to_s, :class=>"small #{cycle('left','center','right')}"),upload.image_url.to_s, :class=>"lightbox",:rel => "#{post.id}"   %>
-				<% end %>
+			<% for  upload in (post.uploads.delete_if{|u| u.id == post.uploads.first.id})  %>
+				<%= link_to image_tag(upload.image_url(:thumb).to_s, :class=>"small #{cycle('left','center','right')}"),upload.image_url.to_s, :class=>"lightbox",:rel => "#{post.id}"   %>
+			<% end %>
 
 		</div>
 		<div class="main_content blocks <%=  post.category.parent.title.gsub("/","+") %>">
