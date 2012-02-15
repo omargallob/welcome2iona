@@ -16,9 +16,9 @@
 		<% @maps.delete_if{|z| z.category.present?}.each do |map| %>
 		<li><%= link_to map.title,map_path(map.id), :target =>"_blank" %></li>
 		<% end %>
-	<% @maps.delete_if{|z| z.category.blank?}.each do |map| %>
-	<li><%= link_to map.category.title,mapper_show_subfiltered_path(map.category.parent.page.name,map.category.parent.title.gsub(/ /,"_"),map.category.title.gsub("/","+").gsub(/ /,"_")), :target =>"_blank" %></li>
-	<% end %>
+		<% Category.find_all_sub.delete_if{|ca| ca.maps.count == 0}.each do |c| %>
+			<li><%= link_to c.title,mapper_show_subfiltered_path(c.parent.page.name,c.parent.title.gsub("/","+").gsub(" ","_"),c.title.gsub("/","+")) %></li>
+		<% end %>
 
 	</ul>
 <% end %>
