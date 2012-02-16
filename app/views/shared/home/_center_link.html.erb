@@ -1,5 +1,7 @@
 <li>
-	<span><%= center_link.published_on.strftime("%d %b") %></span>
+	<span>
+	<%= center_link.start_at.strftime("%d %b") if center_link.category.parent.title=="News" %>
+	<%= center_link.published_on.strftime("%d %b") if center_link.category.parent.title=="What's On" %></span>
 	<ul class="items">
 		<li>
 			<h3 class="uc"><%= link_to center_link.title, viewer_index_filtered_posts_path(center_link.category.parent.page.title.gsub(" ","-").downcase,center_link.category.parent.navlabel.gsub(" ","_")) %></h3>
