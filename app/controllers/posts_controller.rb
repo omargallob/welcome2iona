@@ -29,7 +29,7 @@ class PostsController < ApplicationController
      else
        @category = Category.find_by_title(params[:subcat].gsub("+","/"))
 
-       @posts = @category.posts #.published
+       @posts = @category.posts.published
        @posts = @posts.sort_by(&:published_on).reverse
        @posts =  Kaminari.paginate_array(@posts).page(params[:page]).per(5)
      end
