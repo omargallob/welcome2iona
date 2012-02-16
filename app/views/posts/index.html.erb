@@ -22,7 +22,7 @@
 
 <div id="paginator">
 <%= paginate @posts %>
-
+<h1><%= @posts.count %></h1>
 </div>
 <% content_for(:options) do %>
 	<%= render :partial => "shared/home" if @page.name == "home" %>
