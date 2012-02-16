@@ -36,7 +36,13 @@ class PostsController < ApplicationController
        @category = Category.includes(:posts).find_by_title(params[:subcat].gsub("+","/"))
 
        @posts = @category.posts.published
-       @posts = @posts.sort_by(&:published_on).reverse
+       if params[:parent] == "Whats_On"
+         @posts = @posts.delete_if{|p| p.start_at < Date.yesterday }
+         
+         @posts = @posts.sort_by(&:start_at)
+       elsif params[:parent] == "News"
+          @posts = @posts.sort_by(&:published_on).reverse
+       end
        @posts =  Kaminari.paginate_array(@posts).page(params[:page]).per(5)
      end
   end
