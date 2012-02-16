@@ -10,7 +10,7 @@
 		<div id="photo_link" class="icon"></div>
 			<h3><%= link_to "<span>Photos</span>".html_safe, galleries_path %></h3>
 	</div>
-	<%= content_tag(:h1, "Quick Links", :class=>"light") %>
+	<%= content_tag(:h1, "Categories", :class=>"light") %>
 	<%= render_navigation :level => 2, :items => @main_items %>	
 	<ul class="filters">
 		<% @maps.delete_if{|z| z.category.present?}.each do |map| %>
