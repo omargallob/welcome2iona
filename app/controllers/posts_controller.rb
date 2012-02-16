@@ -2,11 +2,11 @@ class PostsController < ApplicationController
   def index
      @parent = @page = Page.find_by_name(params[:name]||"home")
      if params[:subcat].blank?
-       @category = Category.find_by_navlabel(params[:parent].gsub("$","'").gsub("_"," "))
+       @category = Category.find_by_navlabel(params[:parent].gsub("_"," "))
        if @category.parent == nil
          @posts = Array.new
          Category.children(@category.id).uniq.each do |c| 
-           c.posts.published.each do |p|
+           c.posts.each do |p|
              @posts << p
            end
          end
