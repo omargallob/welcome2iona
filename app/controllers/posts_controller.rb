@@ -33,7 +33,7 @@ class PostsController < ApplicationController
       end
     
      else
-       @category = Category.find_by_title(params[:subcat].gsub("+","/"))
+       @category = Category.includes(:posts).find_by_title(params[:subcat].gsub("+","/"))
 
        @posts = @category.posts.published
        @posts = @posts.sort_by(&:published_on).reverse
@@ -42,6 +42,7 @@ class PostsController < ApplicationController
   end
   
   def show
+    
   end
 
 end
