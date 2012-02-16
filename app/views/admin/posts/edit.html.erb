@@ -23,15 +23,17 @@
 				$.ajax({ type: 'POST', url: '<%= admin_update_categories_path %>', data: 'id='+this.value });
 			});
 
-			<% unless @post.category.parent.title =="Events" %>
+			<% if @post.category.parent.title =="What's On" %>
 				$("#post_published_on_1i").parent().fadeOut("slow");
 				$("#post_start_at_1i").parent().fadeIn("slow");		
 				$("#post_end_at_1i").parent().fadeIn("slow");
-			<% else %>
-			
+			<% elsif @post.category.parent.title =="News" %>
+				$("#extra_info").fadeOut("slow");
 				$("#post_published_on_1i").parent().fadeIn("slow");
 				$("#post_start_at_1i").parent().fadeOut("slow");		
 				$("#post_end_at_1i").parent().fadeOut("slow");
+			<% else %>
+					$("#extra_info").fadeIn("slow");
 			<% end %>
 	});
 	</script>

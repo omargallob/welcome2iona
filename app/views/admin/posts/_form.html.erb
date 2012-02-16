@@ -1,21 +1,22 @@
 <%= simple_form_for([:admin,@post], :html=>{:multipart => true}) do |f| %>
 
  	<%= f.input :published,:as => :radio unless @post.image.blank? and @post.body.blank? %>
+  <%= f.input :published_on, :as => :date %>
+
   <%= f.input :title,:input_html=>{:class => "validate[required]"} %>
   <%= f.input :body,:input_html=>{:class => "mceEditor validate[required]"} %>
 	
 
   <%= f.association :category, :collection => @subcategories,:input_html=>{:class => "validate[required]"} %>
 
-  <%= f.input :published_on, :as => :date %>
-
+<div class="events_holder">
   <%= f.input :start_at, :as => :date %>
 	<div class="input select required"><label class="select required" for="end_date"><abbr title="required">*</abbr> Does this event have an end date?</label><%= check_box_tag 'end_date', 'end_date' %>
 	</div>
 
   <%= f.input :end_at, :as => :date,:disabled => true %>
   <!--<%= f.input :image,:as=>:file, :label => "Thumb image" %>-->
-
+</div>
 <div class="extra_info">
 	<h1>Exta Info</h1>
   <%= f.input :open,:as =>:text,:input_html=>{:class => "mceEditor"} %>
