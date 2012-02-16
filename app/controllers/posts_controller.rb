@@ -15,14 +15,20 @@ class PostsController < ApplicationController
            
            @posts = @posts.sort_by(&:start_at)
          elsif params[:parent] == "News"
-            @posts = @posts.sort_by(&:published).reverse
+            @posts = @posts.sort_by(&:published_on).reverse
          end
         #@posts = @posts.sort_by(&:published_on)
         @posts =  Kaminari.paginate_array(@posts).page(params[:page]).per(5)
       else
         @category = Category.find_by_title(params[:parent].gsub("_"," "))
         @posts = @category.posts.published
+        if params[:parent] == "Whats_On"
+          @posts = @posts.delete_if{|p| p.start_at < Date.yesterday }
+          
+          @posts = @posts.sort_by(&:start_at)
+        elsif params[:parent] == "News"
            @posts = @posts.sort_by(&:published_on).reverse
+        end
            @posts =  Kaminari.paginate_array(@posts).page(params[:page]).per(5)
       end
     
