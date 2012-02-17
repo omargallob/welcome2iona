@@ -45,7 +45,7 @@ class ViewerController < ApplicationController
           @up_coming_events << p
         end   
       end 
-      @up_coming_events.delete_if{|a| a.published_on < Date.today }
+      @up_coming_events.delete_if{|a| a.start_at < Date.yesterday }
       
       Category.children(15).each do |c|
         c.posts.published.each do |p|
