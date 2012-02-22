@@ -18,12 +18,25 @@ class ApplicationController < ActionController::Base
           end 
           topnav.categories.each do |cat|
             @subsub_items = Array.new
-            cat.subcategories.delete_if{|s| s.posts.published.count == 0}.each do |subcat|
-              @subsub  = {"key" => subcat.navlabel, "name" => subcat.title+" (#{subcat.posts.published.count})", "url"=>viewer_index_subfiltered_posts_path(cat.page.name, cat.navlabel.gsub(" ","_"), subcat.navlabel.gsub("/","+"))}
-              @subsub_items << @subsub
+            if cat.title =="What's On"
+              cat.subcategories.delete_if{|s| s.posts.published.future.count == 0}.each do |subcat|
+
+                @subsub  = {"key" => subcat.navlabel, "name" => subcat.title+" (#{subcat.posts.published.future.count})", "url"=>viewer_index_subfiltered_posts_path(cat.page.name, cat.navlabel.gsub(" ","_"), subcat.navlabel.gsub("/","+"))}
+                @subsub_items << @subsub
+              end
+              @sub  = {"key" => cat.navlabel, "name" => cat.title, "url"=>viewer_index_filtered_posts_path(cat.page.name, cat.navlabel.gsub("/","+").gsub("'","$").gsub(" ","_")), :items => @subsub_items}
+              @sub_items << @sub
+
+            else
+              cat.subcategories.delete_if{|s| s.posts.published.count == 0}.each do |subcat|
+
+                @subsub  = {"key" => subcat.navlabel, "name" => subcat.title+" (#{subcat.posts.published.count})", "url"=>viewer_index_subfiltered_posts_path(cat.page.name, cat.navlabel.gsub(" ","_"), subcat.navlabel.gsub("/","+"))}
+                @subsub_items << @subsub
+              end
+              @sub  = {"key" => cat.navlabel, "name" => cat.title, "url"=>viewer_index_filtered_posts_path(cat.page.name, cat.navlabel.gsub("/","+").gsub("'","$").gsub(" ","_")), :items => @subsub_items}
+              @sub_items << @sub
+              
             end
-            @sub  = {"key" => cat.navlabel, "name" => cat.title, "url"=>viewer_index_filtered_posts_path(cat.page.name, cat.navlabel.gsub("/","+").gsub("'","$").gsub(" ","_")), :items => @subsub_items}
-            @sub_items << @sub
             
           end
           # if topnav.name == "home"          
