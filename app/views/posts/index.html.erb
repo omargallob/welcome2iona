@@ -2,7 +2,9 @@
 <%  title render_navigation(:renderer => :text, :items => @main_items,:join_with => ' | ') %>
 
 <h1 class="title">
-	<%= @category.title %> <%= "(#{@category.posts.published.count})" if @category.posts.published.count > 0 %>
+	<%= @category.title %> <%= "(#{@category.posts.published.count})" if @category.posts.published.count > 0  and @category.parent.title.present? and @category.parent.title != "What's On" %>
+	
+	<%= @category.title %> <%= "(#{@category.posts.published.future.count})" if @category.posts.published.count > 0  and @category.parent.title.present? and @category.parent.title == "What's On" %>
 	<%= link_to("View on map",  mapper_show_subfiltered_path(@category.parent.page.name,@category.parent.title.gsub(/ /,"_"),@category.title.gsub("/","+").gsub(/ /,"_")),:class=>"maps",:target => "_blank", :title => "map") unless @category.parent.blank?  %>
 
 	<span class="actions posts">	<%= render :partial => "shared/sharedthis" %>  </span>
