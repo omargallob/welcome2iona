@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
           topnav.categories.each do |cat|
             @subsub_items = Array.new
             cat.subcategories.delete_if{|s| s.posts.published.count == 0}.each do |subcat|
-              @subsub  = {"key" => subcat.navlabel, "name" => subcat.title+" (#{subcat.posts.count})", "url"=>viewer_index_subfiltered_posts_path(cat.page.name, cat.navlabel.gsub(" ","_"), subcat.navlabel.gsub("/","+"))}
+              @subsub  = {"key" => subcat.navlabel, "name" => subcat.title+" (#{subcat.posts.published.count})", "url"=>viewer_index_subfiltered_posts_path(cat.page.name, cat.navlabel.gsub(" ","_"), subcat.navlabel.gsub("/","+"))}
               @subsub_items << @subsub
             end
             @sub  = {"key" => cat.navlabel, "name" => cat.title, "url"=>viewer_index_filtered_posts_path(cat.page.name, cat.navlabel.gsub("/","+").gsub("'","$").gsub(" ","_")), :items => @subsub_items}
