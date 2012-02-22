@@ -22,9 +22,9 @@
 <% content_for(:options) do %>
 	<div class="large_link">
 		<div id="map_link" class="icon"></div>
-		<h3><%= link_to "<span>Iona Map</span>".html_safe, "#" %></h3>
+		<h3><%= link_to "<span>Iona Map</span>".html_safe, maps_path %></h3>
 	</div>
-	<%= content_tag(:h1, "Quick Links") %>
+	<%= content_tag(:h1, "Categories") %>
 	<%= render_navigation :level => 2, :items => @main_items %>
 
 <% end %>
