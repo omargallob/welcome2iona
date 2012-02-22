@@ -3,6 +3,6 @@
 </div>
 <ul class="holder">
 
-		<%= render :partial => "shared/home/center_link", :collection => @up_coming_events.sort{|a,b| a.published_on <=> b.published_on}.take(2) %>
+		<%= render :partial => "shared/home/center_link", :collection => @up_coming_events.take(2) %>
 
 </ul>
