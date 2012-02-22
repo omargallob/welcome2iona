@@ -32,7 +32,7 @@ gem 'event-calendar', :require => 'event_calendar'
 gem 'nokogiri'
 gem 'google-weather'
 #i18n
-
+gem 'errorapp_notifier'
 
 #gem "globalize3"
 #gem 'translate_routes'
