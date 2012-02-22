@@ -37,6 +37,10 @@ class Post < ActiveRecord::Base
   scope :published, lambda{
      where(:published => true).order("published_on ASC")
    }
+   
+  scope :future,   lambda{
+      where("start_at > ?", Date.yesterday)
+    }
   scope :category,  lambda{|id|
      where("category.parent_id"=>id).published
    }
