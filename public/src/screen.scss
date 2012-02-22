@@ -867,8 +867,14 @@ body{
 				#paginator{
 					float:
 						left;
+					width:
+						100%;
 					margin:
-						10px 0;
+						8px 0;
+					padding-bottom:
+						8px;
+					border-bottom:
+						1px solid #dcdcdc;
 					.pagination{
 						font-size:
 							15px;

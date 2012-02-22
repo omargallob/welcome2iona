@@ -13,7 +13,9 @@
 
 	<%= render_navigation :level =>3, :items =>@main_items  %>
 </ul>
-
+<div id="paginator">
+<%= paginate @posts %>
+</div>
 	<ul id="posts">
 		<%= render :partial => "shared/post", :collection => @posts %>
 	</ul>

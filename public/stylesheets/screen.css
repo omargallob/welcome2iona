@@ -722,49 +722,52 @@ body #wrapper section#main section#center .double_columns #latest_news h3 {
 /* line 867, ../src/screen.scss */
 body #wrapper section#main section#center #paginator {
   float: left;
-  margin: 10px 0;
+  width: 100%;
+  margin: 8px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #dcdcdc;
 }
-/* line 872, ../src/screen.scss */
+/* line 878, ../src/screen.scss */
 body #wrapper section#main section#center #paginator .pagination {
   font-size: 15px;
   font-family: "HelveticaNeueLTCom55Roman";
 }
-/* line 878, ../src/screen.scss */
+/* line 884, ../src/screen.scss */
 body #wrapper section#main section#center #paginator .pagination span a {
   color: #3E4F71;
   text-decoration: none;
 }
-/* line 885, ../src/screen.scss */
+/* line 891, ../src/screen.scss */
 body #wrapper section#main section#center #paginator .pagination span a:hover {
   text-decoration: underline;
 }
-/* line 892, ../src/screen.scss */
+/* line 898, ../src/screen.scss */
 body #wrapper section#main section#center div#tabs, body #wrapper section#main section#center ul#maps {
   border: 0px none;
   background: transparent;
   width: 100%;
   float: left;
 }
-/* line 901, ../src/screen.scss */
+/* line 907, ../src/screen.scss */
 body #wrapper section#main section#center div#tabs ul.filter, body #wrapper section#main section#center ul#maps ul.filter {
   background: white;
   border: 0px none;
 }
-/* line 906, ../src/screen.scss */
+/* line 912, ../src/screen.scss */
 body #wrapper section#main section#center div#tabs ul.filter li, body #wrapper section#main section#center ul#maps ul.filter li {
   padding: 0 20px;
 }
-/* line 915, ../src/screen.scss */
+/* line 921, ../src/screen.scss */
 body #wrapper section#main section#center div#tabs div.map_holder, body #wrapper section#main section#center ul#maps div.map_holder {
   width: 100%;
   padding: 0 20px 20px 0px;
 }
-/* line 921, ../src/screen.scss */
+/* line 927, ../src/screen.scss */
 body #wrapper section#main section#center div#tabs div.map_holder, body #wrapper section#main section#center div#tabs li, body #wrapper section#main section#center ul#maps div.map_holder, body #wrapper section#main section#center ul#maps li {
   margin-bottom: 10px;
   float: left;
 }
-/* line 927, ../src/screen.scss */
+/* line 933, ../src/screen.scss */
 body #wrapper section#main section#center div#tabs div.map_holder iframe, body #wrapper section#main section#center div#tabs li iframe, body #wrapper section#main section#center ul#maps div.map_holder iframe, body #wrapper section#main section#center ul#maps li iframe {
   border: 1px solid #9a9a9a;
   padding: 10px;
@@ -772,21 +775,21 @@ body #wrapper section#main section#center div#tabs div.map_holder iframe, body #
   height: 567px;
   margin-bottom: 10px;
 }
-/* line 942, ../src/screen.scss */
+/* line 948, ../src/screen.scss */
 body #wrapper section#main section#center div#tabs div.map_holder a, body #wrapper section#main section#center div#tabs li a, body #wrapper section#main section#center ul#maps div.map_holder a, body #wrapper section#main section#center ul#maps li a {
   color: #9A9A9A;
   text-decoration: none;
 }
-/* line 949, ../src/screen.scss */
+/* line 955, ../src/screen.scss */
 body #wrapper section#main section#center div#tabs div.map_holder a:hover, body #wrapper section#main section#center div#tabs li a:hover, body #wrapper section#main section#center ul#maps div.map_holder a:hover, body #wrapper section#main section#center ul#maps li a:hover {
   text-decoration: underline;
   color: #8EA529;
 }
-/* line 957, ../src/screen.scss */
+/* line 963, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts {
   float: left;
 }
-/* line 960, ../src/screen.scss */
+/* line 966, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li {
   width: 100%;
   border-bottom: 1px solid #dcdcdc;
@@ -794,85 +797,85 @@ body #wrapper section#main section#center ul#posts li {
   margin-top: 15px;
   padding-bottom: 15px;
 }
-/* line 971, ../src/screen.scss */
+/* line 977, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li h2, body #wrapper section#main section#center ul#posts li h3 {
   float: left;
   font-family: "HelveticaNeueLTCom75Bold";
 }
-/* line 977, ../src/screen.scss */
+/* line 983, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li h2 {
   margin-top: 5px;
 }
-/* line 981, ../src/screen.scss */
+/* line 987, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li h3 {
   background: #e2e3df;
   padding: 7px 10px 6px;
   font-size: 14px;
   color: #525252;
 }
-/* line 990, ../src/screen.scss */
+/* line 996, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li h3 a {
   text-decoration: none;
   color: #525252;
 }
-/* line 996, ../src/screen.scss */
+/* line 1002, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li h3 a:hover {
   color: #525252;
   text-decoration: underline;
 }
-/* line 1003, ../src/screen.scss */
+/* line 1009, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.blocks {
   float: left;
   min-height: 165px;
 }
-/* line 1009, ../src/screen.scss */
+/* line 1015, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.image_holder {
   width: 136px;
   background: transparent;
 }
-/* line 1014, ../src/screen.scss */
+/* line 1020, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.image_holder img {
   padding: 0px;
 }
-/* line 1019, ../src/screen.scss */
+/* line 1025, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.image_holder img.large {
   margin-bottom: 0px;
   padding: 2px;
   border: 1px solid #dcdcdc;
 }
-/* line 1027, ../src/screen.scss */
+/* line 1033, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.image_holder img.center {
   margin-left: 1px;
   margin-right: 1px;
   padding: 0px;
 }
-/* line 1035, ../src/screen.scss */
+/* line 1041, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.image_holder img.small {
   padding: 0px;
   border: 1px solid #dcdcdc;
 }
-/* line 1042, ../src/screen.scss */
+/* line 1048, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.image_holder a img:hover {
   -moz-box-shadow: #333333 0px 0px 4px;
   -webkit-box-shadow: #333333 0px 0px 4px;
   -o-box-shadow: #333333 0px 0px 4px;
   box-shadow: #333333 0px 0px 4px;
 }
-/* line 1047, ../src/screen.scss */
+/* line 1053, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.main_content {
   width: 259px;
   background: transparent;
   padding: 0 15px;
   border-right: 1px solid #dcdcdc;
 }
-/* line 1057, ../src/screen.scss */
+/* line 1063, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.main_content h2 {
   width: 100%;
   font-size: 17px;
   color: #8ea529;
   padding: 5px 0 3px;
 }
-/* line 1068, ../src/screen.scss */
+/* line 1074, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.main_content p {
   font-size: 15px;
   float: left;
@@ -880,84 +883,84 @@ body #wrapper section#main section#center ul#posts li div.main_content p {
   margin-top: 0px;
   width: 80%;
 }
-/* line 1079, ../src/screen.scss */
+/* line 1085, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.main_content p time {
   font-size: 12px;
 }
-/* line 1083, ../src/screen.scss */
+/* line 1089, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.main_content p em {
   font-style: italic;
 }
-/* line 1088, ../src/screen.scss */
+/* line 1094, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.main_content p.gotolink {
   float: right;
   font-size: 14px;
   text-align: right;
 }
-/* line 1095, ../src/screen.scss */
+/* line 1101, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.main_content p.gotolink a {
   color: #8ea529;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 1103, ../src/screen.scss */
+/* line 1109, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.main_content p.gotolink a:hover {
   text-decoration: underline;
 }
-/* line 1109, ../src/screen.scss */
+/* line 1115, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.News {
   width: 576px;
   border-right: 0px none;
 }
-/* line 1115, ../src/screen.scss */
+/* line 1121, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.extra_info {
   width: 295px;
   padding-left: 15px;
   background: transparent;
 }
-/* line 1122, ../src/screen.scss */
+/* line 1128, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.extra_info table {
   float: left;
   width: 295px;
   margin: 10px 0;
 }
-/* line 1130, ../src/screen.scss */
+/* line 1136, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.extra_info table tr td.space {
   width: 15px;
   height: 15px;
   float: left;
 }
-/* line 1138, ../src/screen.scss */
+/* line 1144, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.extra_info table tr td.title {
   font-weight: bold;
   width: 24%;
   vertical-align: top;
 }
-/* line 1147, ../src/screen.scss */
+/* line 1153, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.extra_info table tr td.descr p {
   width: 200px;
 }
-/* line 1154, ../src/screen.scss */
+/* line 1160, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.extra_info table tr td p {
   padding: 0px;
   margin: 0px;
   font-size: 14px;
 }
-/* line 1161, ../src/screen.scss */
+/* line 1167, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.extra_info table tr td p a {
   color: #8ea529;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 1169, ../src/screen.scss */
+/* line 1175, ../src/screen.scss */
 body #wrapper section#main section#center ul#posts li div.extra_info table tr td p a:hover {
   text-decoration: underline;
 }
-/* line 1183, ../src/screen.scss */
+/* line 1189, ../src/screen.scss */
 body #wrapper section#main section#center table tr td img {
   margin-bottom: 0px;
 }
-/* line 1193, ../src/screen.scss */
+/* line 1199, ../src/screen.scss */
 body footer {
   float: left;
   width: 940px;
@@ -966,45 +969,45 @@ body footer {
   margin: 25px 0 20px 10px;
   box-shadow: 0px 2px 4px #7A7A7A;
 }
-/* line 1207, ../src/screen.scss */
+/* line 1213, ../src/screen.scss */
 body footer h2 {
   font-size: 16px;
   padding: 20px 20px 10px 20px;
 }
-/* line 1213, ../src/screen.scss */
+/* line 1219, ../src/screen.scss */
 body footer #copyright {
   width: 914px;
   padding: 13px;
   float: left;
 }
-/* line 1220, ../src/screen.scss */
+/* line 1226, ../src/screen.scss */
 body footer #copyright p {
   margin: 0px;
 }
-/* line 1223, ../src/screen.scss */
+/* line 1229, ../src/screen.scss */
 body footer #copyright p a {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
-/* line 1231, ../src/screen.scss */
+/* line 1237, ../src/screen.scss */
 body footer #copyright p a:hover {
   text-decoration: underline;
 }
-/* line 1237, ../src/screen.scss */
+/* line 1243, ../src/screen.scss */
 body footer #sitemap {
   float: left;
   width: 940px;
   background: url(/images/system/bg/footer_blue.png) repeat;
 }
-/* line 1245, ../src/screen.scss */
+/* line 1251, ../src/screen.scss */
 body footer ul {
   width: 890px;
   float: left;
   padding: 0px 0px 0 0px;
   margin: 5px 20px 20px 20px;
 }
-/* line 1254, ../src/screen.scss */
+/* line 1260, ../src/screen.scss */
 body footer ul li {
   margin-top: 20px;
   font-size: 10px;
@@ -1012,37 +1015,37 @@ body footer ul li {
   width: 140px;
   margin-right: 5px;
 }
-/* line 1265, ../src/screen.scss */
+/* line 1271, ../src/screen.scss */
 body footer ul li a {
   color: white;
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 1275, ../src/screen.scss */
+/* line 1281, ../src/screen.scss */
 body footer ul li a:hover {
   text-decoration: underline;
 }
-/* line 1279, ../src/screen.scss */
+/* line 1285, ../src/screen.scss */
 body footer ul li strong {
   font-size: 12px;
 }
-/* line 1283, ../src/screen.scss */
+/* line 1289, ../src/screen.scss */
 body footer ul li ul {
   width: 120px;
   margin: 0px;
 }
-/* line 1288, ../src/screen.scss */
+/* line 1294, ../src/screen.scss */
 body footer ul li ul li {
   line-height: 12px;
   margin: 5px 0 0 0;
 }
-/* line 1293, ../src/screen.scss */
+/* line 1299, ../src/screen.scss */
 body footer ul li ul li a {
   font-size: 12px;
   font-weight: normal;
 }
-/* line 1299, ../src/screen.scss */
+/* line 1305, ../src/screen.scss */
 body footer ul li ul li ul {
   display: none;
 }
