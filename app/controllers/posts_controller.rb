@@ -6,7 +6,7 @@ class PostsController < ApplicationController
        if @category.parent == nil
          @posts = Array.new
          Category.children(@category.id).uniq.each do |c| 
-           c.posts.each do |p|
+           c.posts.published.each do |p|
              @posts << p
            end
          end
