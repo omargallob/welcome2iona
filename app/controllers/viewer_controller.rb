@@ -41,7 +41,7 @@ class ViewerController < ApplicationController
       @up_coming_events = []
       @latest_news = []
       Category.children(1).each do |c|
-        c.posts.each do |p|
+        c.posts.published.each do |p|
           @up_coming_events << p
         end   
       end 
