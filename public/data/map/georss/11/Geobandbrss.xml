@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:georss="http://www.georss.org/georss" version="2.0">
+  <channel>
+    <title>B&amp;B's</title>
+    <link>http://www.bing.com/maps</link>
+    <description />
+    <language>en-gb</language>
+    <item>
+      <title>Bishop's Walk B&amp;B</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!214</link>
+      <description />
+      <guid isPermaLink="false">80906cfee30b4c8e</guid>
+      <pubDate>Sat, 14 Jan 2012 16:57:52 GMT</pubDate>
+      <georss:point>56.3398433 -6.3923349</georss:point>
+    </item>
+    <item>
+      <title>Ardoran B&amp;B</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!214</link>
+      <description />
+      <guid isPermaLink="false">a07228fdad4b1a06</guid>
+      <pubDate>Sat, 14 Jan 2012 17:10:48 GMT</pubDate>
+      <georss:point>56.3265337 -6.3963195</georss:point>
+    </item>
+    <item>
+      <title>Torassa B&amp;B</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!214</link>
+      <description />
+      <guid isPermaLink="false">c6eadf1ec526c32b</guid>
+      <pubDate>Sat, 14 Jan 2012 17:14:39 GMT</pubDate>
+      <georss:point>56.326144 -6.4021023</georss:point>
+    </item>
+    <item>
+      <title>Tigh na Tobrach B&amp;B</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!214</link>
+      <description />
+      <guid isPermaLink="false">53daa22f80e41fff</guid>
+      <pubDate>Sat, 14 Jan 2012 17:15:12 GMT</pubDate>
+      <georss:point>56.3255878 -6.4029284</georss:point>
+    </item>
+    <item>
+      <title>Ruanaich B&amp;B</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!214</link>
+      <description />
+      <guid isPermaLink="false">ae43bd3b7359778e</guid>
+      <pubDate>Sat, 14 Jan 2012 17:15:42 GMT</pubDate>
+      <georss:point>56.3246776 -6.4063777</georss:point>
+    </item>
+    <item>
+      <title>Clachan Corrach B&amp;B</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!214</link>
+      <description />
+      <guid isPermaLink="false">93789a503439a677</guid>
+      <pubDate>Sat, 14 Jan 2012 17:16:05 GMT</pubDate>
+      <georss:point>56.3282052 -6.4038404</georss:point>
+    </item>
+    <item>
+      <title>Martyrs's Bay B&amp;B</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!214</link>
+      <description />
+      <guid isPermaLink="false">9c790b719823db4e</guid>
+      <pubDate>Mon, 16 Jan 2012 22:22:18 GMT</pubDate>
+      <georss:point>56.3299438 -6.3931369</georss:point>
+    </item>
+    <item>
+      <title>Skerryvore B&amp;B</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!214</link>
+      <description>new building not on the map yet</description>
+      <guid isPermaLink="false">54dc6a7937ee28e5</guid>
+      <pubDate>Wed, 18 Jan 2012 19:42:50 GMT</pubDate>
+      <georss:point>56.32705134248947 -6.41616509409732</georss:point>
+    </item>
+  </channel>
+</rss>

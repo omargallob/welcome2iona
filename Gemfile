@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.6'
+gem 'rails', '3.0.19'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -20,7 +20,7 @@ gem 'rack-cache', :require => 'rack/cache'
 gem "rmagick"
 gem "mini_magick"
 gem "fog"
-gem 'carrierwave' , :git => "git://github.com/jnicklas/carrierwave.git"
+gem 'carrierwave'
 gem "nifty-generators"
 gem "simple_form",'1.4.2'
 gem "simple-navigation"

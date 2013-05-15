@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:georss="http://www.georss.org/georss" version="2.0">
+  <channel>
+    <title>Self Catering</title>
+    <link>http://www.bing.com/maps</link>
+    <description />
+    <language>en-gb</language>
+    <item>
+      <title>Calva Self Catering Accomodation</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!222</link>
+      <description />
+      <guid isPermaLink="false">3acdc3095ae7e282</guid>
+      <pubDate>Sat, 14 Jan 2012 16:56:38 GMT</pubDate>
+      <georss:point>56.3375805 -6.3918039</georss:point>
+    </item>
+    <item>
+      <title>Iona Holiday Cottages</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!222</link>
+      <description />
+      <guid isPermaLink="false">783114741ccdcc75</guid>
+      <pubDate>Sat, 14 Jan 2012 17:04:16 GMT</pubDate>
+      <georss:point>56.3403487 -6.3910904</georss:point>
+    </item>
+    <item>
+      <title>Shore Cottage Self Catering</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!222</link>
+      <description />
+      <guid isPermaLink="false">55de78d51ad2f272</guid>
+      <pubDate>Sat, 14 Jan 2012 17:09:06 GMT</pubDate>
+      <georss:point>56.3281428 -6.3950964</georss:point>
+    </item>
+    <item>
+      <title>Ardbeg Self Catering</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!222</link>
+      <description />
+      <guid isPermaLink="false">a14901fe28078467</guid>
+      <pubDate>Sat, 14 Jan 2012 17:10:25 GMT</pubDate>
+      <georss:point>56.3271137 -6.39596</georss:point>
+    </item>
+    <item>
+      <title>Darach Beag Self Catering</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!222</link>
+      <description />
+      <guid isPermaLink="false">8e2dc702d4d0ded6</guid>
+      <pubDate>Sat, 14 Jan 2012 17:12:37 GMT</pubDate>
+      <georss:point>56.3308581 -6.3940932</georss:point>
+    </item>
+    <item>
+      <title>Traigh Mor Self Catering</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!222</link>
+      <description />
+      <guid isPermaLink="false">8133df569e720012</guid>
+      <pubDate>Sat, 14 Jan 2012 17:13:40 GMT</pubDate>
+      <georss:point>56.323229 -6.4007344</georss:point>
+    </item>
+    <item>
+      <title>Cnoc-Oran Self Catering</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!222</link>
+      <description />
+      <guid isPermaLink="false">cb32d3da4f52c0af</guid>
+      <pubDate>Sat, 14 Jan 2012 17:18:19 GMT</pubDate>
+      <georss:point>56.327417 -6.4078181</georss:point>
+    </item>
+    <item>
+      <title>Lagandorain Self Catering</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!222</link>
+      <description />
+      <guid isPermaLink="false">3d3726ee50491e18</guid>
+      <pubDate>Wed, 18 Jan 2012 20:05:11 GMT</pubDate>
+      <georss:point>56.345975811647115 -6.390158651997435</georss:point>
+    </item>
+  </channel>
+</rss>

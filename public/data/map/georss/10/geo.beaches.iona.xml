@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:georss="http://www.georss.org/georss" version="2.0">
+  <channel>
+    <title>Beaches</title>
+    <link>http://www.bing.com/maps</link>
+    <description />
+    <language>en-gb</language>
+    <item>
+      <title>Calva</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!263</link>
+      <description />
+      <guid isPermaLink="false">424b04b1cf7d58fc</guid>
+      <pubDate>Tue, 17 Jan 2012 16:19:08 GMT</pubDate>
+      <georss:point>56.348022 -6.3908222</georss:point>
+    </item>
+    <item>
+      <title>St Ronan's Bay</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!263</link>
+      <description />
+      <guid isPermaLink="false">7cedd97e5713dbd8</guid>
+      <pubDate>Wed, 18 Jan 2012 19:45:42 GMT</pubDate>
+      <georss:point>56.3310397 -6.3917878</georss:point>
+    </item>
+    <item>
+      <title>Martyr's Bay</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!263</link>
+      <description />
+      <guid isPermaLink="false">495fbf3f15d75b81</guid>
+      <pubDate>Tue, 17 Jan 2012 16:41:19 GMT</pubDate>
+      <georss:point>56.328827 -6.3938906</georss:point>
+    </item>
+    <item>
+      <title>Traigh Mor</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!263</link>
+      <description />
+      <guid isPermaLink="false">2ecff49c3b6209ca</guid>
+      <pubDate>Tue, 17 Jan 2012 16:40:53 GMT</pubDate>
+      <georss:point>56.3214191 -6.4014223</georss:point>
+    </item>
+    <item>
+      <title>Calva</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!263</link>
+      <description />
+      <guid isPermaLink="false">a8f313ae966491a5</guid>
+      <pubDate>Tue, 17 Jan 2012 16:19:08 GMT</pubDate>
+      <georss:point>56.3472372 -6.3988527</georss:point>
+    </item>
+    <item>
+      <title>Sandeels Bay</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!263</link>
+      <description />
+      <guid isPermaLink="false">f0f4dfac5a637c38</guid>
+      <pubDate>Tue, 17 Jan 2012 16:12:11 GMT</pubDate>
+      <georss:point>56.3192356 -6.4042761</georss:point>
+    </item>
+    <item>
+      <title>White Strand of the Monks</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!263</link>
+      <description />
+      <guid isPermaLink="false">9f2c1feec22e01ab</guid>
+      <pubDate>Tue, 17 Jan 2012 16:11:34 GMT</pubDate>
+      <georss:point>56.3479269 -6.3828614</georss:point>
+    </item>
+    <item>
+      <title>Bay at the Back of the Ocean</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!263</link>
+      <description />
+      <guid isPermaLink="false">614a2ca3d104fbae</guid>
+      <pubDate>Tue, 17 Jan 2012 16:10:57 GMT</pubDate>
+      <georss:point>56.3281356 -6.4217427</georss:point>
+    </item>
+    <item>
+      <title>Eilean Annraidh (Storm Island)</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!263</link>
+      <description />
+      <guid isPermaLink="false">d2988b6331a1df95</guid>
+      <pubDate>Tue, 17 Jan 2012 15:59:59 GMT</pubDate>
+      <georss:point>56.353206 -6.3769391</georss:point>
+    </item>
+    <item>
+      <title>Port Ban</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!263</link>
+      <description />
+      <guid isPermaLink="false">4deccf133ac8aeb5</guid>
+      <pubDate>Tue, 17 Jan 2012 15:53:05 GMT</pubDate>
+      <georss:point>56.3329297 -6.4277079</georss:point>
+    </item>
+    <item>
+      <title>Columba's Bay</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!263</link>
+      <description />
+      <guid isPermaLink="false">1ce1b88ad23c73d0</guid>
+      <pubDate>Tue, 17 Jan 2012 15:47:16 GMT</pubDate>
+      <georss:point>56.3088934 -6.4263346</georss:point>
+    </item>
+  </channel>
+</rss>

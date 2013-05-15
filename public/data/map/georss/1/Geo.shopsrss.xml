@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:georss="http://www.georss.org/georss" version="2.0">
+  <channel>
+    <title>Shops</title>
+    <link>http://www.bing.com/maps</link>
+    <description />
+    <language>en-gb</language>
+    <item>
+      <title>Iona Craft Shop</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!158</link>
+      <description />
+      <guid isPermaLink="false">be0f6bb600e70995</guid>
+      <pubDate>Sat, 14 Jan 2012 17:33:22 GMT</pubDate>
+      <georss:point>56.3307587 -6.3937297</georss:point>
+    </item>
+    <item>
+      <title>Spar</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!158</link>
+      <description />
+      <guid isPermaLink="false">c64458b579aa6694</guid>
+      <pubDate>Sat, 14 Jan 2012 16:37:52 GMT</pubDate>
+      <georss:point>56.330732 -6.3934293</georss:point>
+    </item>
+    <item>
+      <title>Oran Crafts</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!158</link>
+      <description />
+      <guid isPermaLink="false">14fbc75424c7fd7</guid>
+      <pubDate>Sat, 14 Jan 2012 16:46:22 GMT</pubDate>
+      <georss:point>56.333236 -6.3944539</georss:point>
+    </item>
+    <item>
+      <title>Aosdana</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!158</link>
+      <description />
+      <guid isPermaLink="false">5eb50b19a92bded1</guid>
+      <pubDate>Sat, 14 Jan 2012 16:46:34 GMT</pubDate>
+      <georss:point>56.3333669 -6.3944163</georss:point>
+    </item>
+    <item>
+      <title>Iona Bookshop</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!158</link>
+      <description />
+      <guid isPermaLink="false">d5d16b43d8422e49</guid>
+      <pubDate>Sat, 14 Jan 2012 16:47:37 GMT</pubDate>
+      <georss:point>56.3336791 -6.3938209</georss:point>
+    </item>
+    <item>
+      <title>Iona Community Shop</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!158</link>
+      <description />
+      <guid isPermaLink="false">c659d104957381de</guid>
+      <pubDate>Sat, 14 Jan 2012 16:50:57 GMT</pubDate>
+      <georss:point>56.3354485 -6.3932147</georss:point>
+    </item>
+    <item>
+      <title>Iona Gallery &amp; Pottery</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!158</link>
+      <description />
+      <guid isPermaLink="false">1f02c9b33db8108</guid>
+      <pubDate>Sat, 14 Jan 2012 16:52:27 GMT</pubDate>
+      <georss:point>56.3358232 -6.3933274</georss:point>
+    </item>
+    <item>
+      <title>Martyrs Bay Shop</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!158</link>
+      <description />
+      <guid isPermaLink="false">f3f86a6a1ff48ea5</guid>
+      <pubDate>Mon, 16 Jan 2012 22:21:20 GMT</pubDate>
+      <georss:point>56.3299706 -6.3930645</georss:point>
+    </item>
+  </channel>
+</rss>

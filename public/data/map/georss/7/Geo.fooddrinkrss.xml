@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:georss="http://www.georss.org/georss" version="2.0">
+  <channel>
+    <title>Food &amp; Drink</title>
+    <link>http://www.bing.com/maps</link>
+    <description />
+    <language>en-gb</language>
+    <item>
+      <title>Martyrs Bay Restaurant &amp; Pub</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!167</link>
+      <description />
+      <guid isPermaLink="false">5572e02d8c01a34b</guid>
+      <pubDate>Sat, 14 Jan 2012 16:39:44 GMT</pubDate>
+      <georss:point>56.3299676 -6.3927265</georss:point>
+    </item>
+    <item>
+      <title>Heritage Centre &amp; Tearoom</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!167</link>
+      <description />
+      <guid isPermaLink="false">34826c40569a3202</guid>
+      <pubDate>Sat, 14 Jan 2012 16:43:43 GMT</pubDate>
+      <georss:point>56.3321743 -6.3943949</georss:point>
+    </item>
+    <item>
+      <title>St Columba Hotel</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!167</link>
+      <description />
+      <guid isPermaLink="false">9a74ff88cd9b06d7</guid>
+      <pubDate>Sat, 14 Jan 2012 16:47:21 GMT</pubDate>
+      <georss:point>56.3335155 -6.3936224</georss:point>
+    </item>
+    <item>
+      <title>Argyll Hotel</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!167</link>
+      <description />
+      <guid isPermaLink="false">6fe0388222e6e326</guid>
+      <pubDate>Sat, 14 Jan 2012 17:29:54 GMT</pubDate>
+      <georss:point>56.3314172 -6.392728</georss:point>
+    </item>
+  </channel>
+</rss>

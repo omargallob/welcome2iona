@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:georss="http://www.georss.org/georss" version="2.0">
+  <channel>
+    <title>Hotels</title>
+    <link>http://www.bing.com/maps</link>
+    <description />
+    <language>en-gb</language>
+    <item>
+      <title>St Columba Hotel</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!216</link>
+      <description />
+      <guid isPermaLink="false">1691dca0635faf52</guid>
+      <pubDate>Sat, 14 Jan 2012 16:47:21 GMT</pubDate>
+      <georss:point>56.3335155 -6.3936224</georss:point>
+    </item>
+    <item>
+      <title>Argyll Hotel</title>
+      <link>http://www.bing.com/maps/?cid=93675998AC64121!216</link>
+      <description />
+      <guid isPermaLink="false">3355255636f692c1</guid>
+      <pubDate>Sat, 14 Jan 2012 17:29:54 GMT</pubDate>
+      <georss:point>56.3314172 -6.392728</georss:point>
+    </item>
+  </channel>
+</rss>
