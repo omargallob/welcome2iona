@@ -171,6 +171,8 @@ GEM
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
     ruby-hmac (0.4.0)
+    rvm-capistrano (1.3.0)
+      capistrano (>= 2.0.0)
     sass (3.2.9)
     simple-navigation (3.10.1)
       activesupport (>= 2.3.2)
@@ -225,6 +227,7 @@ DEPENDENCIES
   rails (= 3.0.19)
   rmagick
   rspec-rails (~> 2.4)
+  rvm-capistrano
   sass
   simple-navigation
   simple_form (= 1.4.2)

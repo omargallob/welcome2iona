@@ -12,6 +12,7 @@ gem 'capistrano'
 gem 'capistrano-ext'
 gem "cap-recipes"
 gem 'capistrano_colors'
+gem 'rvm-capistrano'
 
 # #user management
 gem 'devise'
