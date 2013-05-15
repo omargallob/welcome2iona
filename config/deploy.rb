@@ -22,7 +22,7 @@ role :db,           "178.79.161.32", :primary => true
 set :rails_env,     "production"
 set :branch,        "master"
 set :user,          "deploy"
-#set :password,      "techno83"
+set :password,      "kelpie2012"
 
 set :deploy_to, "/home/deploy/isle-of-iona"
 set :rails_root, "/home/deploy/isle-of-iona/current"
