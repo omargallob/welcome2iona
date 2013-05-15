@@ -8,7 +8,10 @@ gem 'rails', '3.0.19'
 gem 'mysql2','0.2.4'
 gem 'jquery-rails'
 
-
+gem 'capistrano'
+gem 'capistrano-ext'
+gem "cap-recipes"
+gem 'capistrano_colors'
 
 # #user management
 gem 'devise'
