@@ -1,7 +1,7 @@
 require 'bundler/capistrano'
 #require 'deploy/database'
 require 'capistrano_colors'
-require "rvm/capistrano"
+#require "rvm/capistrano"
 #require 'airbrake/capistrano'
 #require 'hipchat/capistrano'
 
