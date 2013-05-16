@@ -1,7 +1,7 @@
 require 'bundler/capistrano'
 #require 'deploy/database'
 require 'capistrano_colors'
-require "rvm/capistrano"
+# require "rvm/capistrano"
 #require 'airbrake/capistrano'
 #require 'hipchat/capistrano'
 
@@ -25,6 +25,8 @@ set :branch,        "master"
 set :user,          "deploy"
 set :password,      "kelpie2012"
 
+# set :rvm_ruby_string, 'ruby-1.9.3-p392'
+# set :rvm_type, :local
 set :deploy_to, "/home/deploy/isle-of-iona"
 set :rails_root, "/home/deploy/isle-of-iona/current"
 
@@ -41,4 +43,13 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
+
 end
+
+namespace :rvm do
+  task :trust_rvmrc do
+    run "rvm rvmrc trust #{release_path}"
+  end
+end
+
+after "deploy", "rvm:trust_rvmrc"

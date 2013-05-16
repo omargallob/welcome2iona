@@ -4,7 +4,7 @@ gem 'rails', '3.0.19'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'bundler'
 gem 'mysql2','0.2.4'
 gem 'jquery-rails'
 

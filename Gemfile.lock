@@ -201,6 +201,7 @@ PLATFORMS
 DEPENDENCIES
   auto_html
   aws-s3
+  bundler
   cancan
   cap-recipes
   capistrano
