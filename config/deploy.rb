@@ -1,7 +1,7 @@
 require 'bundler/capistrano'
 #require 'deploy/database'
 require 'capistrano_colors'
-# require "rvm/capistrano"
+require "rvm/capistrano"
 #require 'airbrake/capistrano'
 #require 'hipchat/capistrano'
 
@@ -11,6 +11,8 @@ set :repository,  "git@github.com:omargallob/welcome2iona.git"
 set :scm, :git
 
 set :use_sudo, false
+
+#set :bundle_cmd, 'bundle'
 
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
@@ -46,10 +48,10 @@ namespace :deploy do
 
 end
 
-namespace :rvm do
-  task :trust_rvmrc do
-    run "rvm rvmrc trust #{release_path}"
-  end
-end
+# namespace :rvm do
+#   task :trust_rvmrc do
+#     run "rvm rvmrc trust #{release_path}"
+#   end
+# end
 
-after "deploy", "rvm:trust_rvmrc"
+# after "deploy", "rvm:trust_rvmrc"
