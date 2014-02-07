@@ -1,5 +1,0 @@
-if [[ ! -s "/usr/local/rvm/bin" ]]; then
-  umask g+w
-  export rvm_selfcontained=0
-  export rvm_prefix="/usr/local/"
-fi
