@@ -1,3 +1,7 @@
+require 'capistrano/ext/multistage'
+require 'bundler/capistrano'
+require 'capistrano_colors'
+
 set :stages, %w(production staging)
 set :default_stage, "production"
 
@@ -9,11 +13,20 @@ set :branch, :master
 set :deploy_to, "/home/deploy/welcome2iona"
 set :rails_root, "/home/deploy/welcome2iona/current"
 
+set :use_sudo,              false
+ssh_options[:paranoid]  =   false
+
 set :deploy_via, :copy
 
 
+set :rvm_type, :system
+set :rvm_ruby_string, 'ruby-1.9.3-p327'
+
+require "rvm/capistrano"
+
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 # set :keep_releases, 5
+
 
 namespace :deploy do
 

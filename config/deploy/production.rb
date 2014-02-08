@@ -7,9 +7,9 @@ set :domain, "welcometoiona.com"
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 
-# role :web,          "%w{deploy@178.79.130.211}"
-# role :app,          "%w{deploy@178.79.130.211}"
-# role :db,           "%w{deploy@178.79.130.211}", :primary => true
+role :web,          "198.58.112.15"
+role :app,          "198.58.112.15"
+role :db,           "198.58.112.15", :primary => true
 
 # Extended Server Syntax
 # ======================
@@ -29,11 +29,8 @@ set :domain, "welcometoiona.com"
 #    auth_methods: %w(password)
 #  }
 # and/or per server
-server '198.58.112.15',
-  user: 'deploy',
-  roles: %w{web app db},
-  primary: true,
-  ssh_options: {
+# server '198.58.112.15',user: 'deploy',roles: %w{web app db},primary: true,
+  set :ssh_options, {
     user: 'deploy', # overrides user setting above
     keys: %w(/Users/omar/.ssh/id_rsa),
     forward_agent: false,

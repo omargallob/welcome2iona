@@ -7,7 +7,7 @@ gem 'rails', '3.0.19'
 gem 'bundler'
 gem 'mysql2','0.2.4'
 gem 'jquery-rails'
-
+gem 'passenger'
 gem 'capistrano'
 gem 'capistrano-ext'
 gem "cap-recipes"
