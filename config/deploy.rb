@@ -20,7 +20,7 @@ set :deploy_via, :copy
 
 
 set :rvm_type, :system
-set :rvm_ruby_string, 'ruby-1.9.3-p327'
+set :rvm_ruby_string, 'ruby-1.9.3-p327@iona'
 
 require "rvm/capistrano"
 
