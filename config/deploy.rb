@@ -18,11 +18,11 @@ ssh_options[:paranoid]  =   false
 
 set :deploy_via, :copy
 
+require "rvm/capistrano"
 
 set :rvm_type, :system
 set :rvm_ruby_string, 'ruby-1.9.3-p327@iona'
 
-require "rvm/capistrano"
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 # set :keep_releases, 5
